@@ -7,10 +7,7 @@
 希望这些内容能够让更多的小伙伴受益，不过，记得给我去 **Star** [我的Github](https://gitee.com/LDeCunZai/lanlan-interview)一下下哟，听说 **Star** 的小伙伴就很容易上岸呢。
 
 当然也建立了自己群，如果大家想进群，最好加我的时候自我介绍一下哈，我晚上会统一同意哦。
-<style>
-    .dv{width:100%;text-align:left;}
-    .dv_img{max-width:100%;height:auto;}
-</style>
+
 
 <div class="dv">
     <img class="dv_img" src="https://img-blog.csdnimg.cn/bb348380fec747c3aa249ee788f739d4.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5piv56iL5bqP5ZGY5bCP6LSx,size_1,color_FFFFFF,t_70,g_se,x_16" height="200" width="200"/> 
@@ -174,8 +171,3 @@
 [「成都」拿下这80家互联网企业](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453506872&idx=1&sn=360e4203220f26b9ed0d314247624255&chksm=8c98fd4bbbef745dd4835ecf52b14b0a8c056f0e095575465795c47ff87613a7586878b28ef6&token=1639104751&lang=zh_CN#rd)
 
 [妹妹不慌，姐姐告诉你上岸的学习网站](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453507762&idx=1&sn=fadb3e81917d5cbc42e8236d08007eb8&chksm=8c98f8c1bbef71d73646d1ae3ad75369a1e0c2e6a69914045e4d9750d88e58cfc66767fc6a17&token=1639104751&lang=zh_CN#rd)
-<!-- 不蒜子计数 -->
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span id="busuanzi_container_site_pv" style='display:none'>| 总访问量 <span id="busuanzi_value_site_pv"></span> 次 </span>
-<span id="busuanzi_container_site_uv" style='display:none'>| 总访客数 <span id="busuanzi_value_site_uv"></span> 人 </span>
-<!-- 不蒜子计数 -->	
