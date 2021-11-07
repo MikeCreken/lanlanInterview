@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lanlanInterview - By lanlan - 微信公众号：暖蓝笔记 🌹</title>
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/images/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- Adsense 资源投放 -->
+  <script data-ad-client="ca-pub-1890271224952559" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- 谷歌站点收录 -->
+  <meta name="google-site-verification" content="qTFCf1hJ275saQ7H1kin5t2DVpznBKAj0Gi50XMOVMo" />
+  <!-- 百度站点收录-->
+  <meta name="baidu-site-verification" content="SZyWUIzWiU" />
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <!-- 支持 LaTex 语言 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+  <link rel="stylesheet" href="https://wugenqiang.js.org/src/css/iconfont.css">
+  <link rel="stylesheet" href="./plugin/custom.css">
+  <!-- alert -->
+  <link rel="stylesheet" href="./plugin/sweetalert.min.css" type='text/css' media='all' />
+  <!-- 友链 -->
+  <link rel="stylesheet" href="./plugin/css/friends-link.css">
+  <!-- 自定义特色样式：by myself -->
+  <link rel="stylesheet" href="./plugin/css/me.css">
+
+  <style>
+
+    /*加重描述strong*/
+    .markdown-section strong {
+      color: rgb(239, 112, 96);
+    }
+
+    .app-nav{
+      position: fixed;
+      margin: 0;
+      /*padding: 10px 50px 10px 0;*/
+      padding: 10px 0 10px 0;/*上、右、下、左*/
+      width: calc(100% - 325px);
+      background-color: #fff;
+      height: 55px;
+      border-bottom: 1px solid #eee;
+    }
+
+    /*.github-corner{
+      position: absolute;
+      z-index: 999999;
+      top: 0;
+    }*/
+
+    .markdown-section code {
+      border-radius: 2px;
+      font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+      font-size: 16px !important;
+      margin: 0 2px;
+      padding: 3px 5px;
+      white-space: nowrap;
+      border: 1px solid #282c34;
+      color: rgb(184, 101, 208);
+    }
+
+    .markdown-section > div > img, .markdown-section pre {
+      box-shadow: 2px 2px 20px 6px rgb(255, 255, 255) !important;
+    }
+
+    .markdown-section a:not(:hover) {
+      text-decoration: none;
+    }
+
+    /*侧边栏*/
+    .sidebar {
+      padding-top: 6px;
+    }
+
+    aside.sidebar ul li {
+      margin: 0;
+      position: relative;
+    }
+
+    aside.sidebar ul li ul {
+      margin: 6px 0;
+    }
+
+    aside.sidebar ul li p {
+      padding-left: 22px;
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    aside.sidebar ul li a {
+      line-height: 35px;
+      font-size: 14px;
+      padding: 3px 0 3px 22px;
+    }
+
+    aside.sidebar ul li.active > a {
+      font-size: 16px !important;
+    }
+
+    aside.sidebar ul li.active > a:before {
+      content: '' !important;
+      position: absolute !important;
+      margin: 0 !important;
+      width: 10px !important;
+      height: 10px !important;
+      top: 15px !important;
+      left: 0px !important;
+      border-radius: 50% !important;
+      background-color: #fed24a !important;
+      box-shadow: 0 0 0 3px rgba(254, 210, 74, 0.4) !important;
+    }
+
+    /*以上调侧边栏*/
+
+    h1 span{
+      display:inline-block;
+      background: rgb(66, 185, 131);
+      color:#ffffff;
+      padding:  10px  16px;
+      border-radius:5px;
+      box-shadow: 1px 1px 3px black;
+    }
+
+    /*代码块背景*/
+    p code{
+      background-color: rgb(255, 255, 255) !important;
+    }
+
+    .markdown-section p.tip,
+    .markdown-section tr:nth-child(1n) {
+      font-size: 16px !important;
+    }
+
+    .markdown-section h1 {
+      margin: 3rem 0 2rem 0;
+    }
+
+    .markdown-section h2 {
+      margin: 2rem 0 1rem;
+    }
+    img,
+    pre {
+      border-radius: 5px;
+    }
+
+    /*添加代码块复制按钮样式*/
+    .docsify-copy-code-button {
+      background: #00a1d6 !important;
+      color: #FFFFFF !important;
+      font-size: 13px !important;
+    }
+
+    ::after{
+      color: #9da2fd !important;
+      font-size: 13px !important;
+    }
+    .markdown-section>p {
+      font-size: 16px !important;
+    }
+
+
+    /*代码块头部图标 start*/
+    .markdown-section pre:before {
+      content: '';
+      display: block;
+      background: url(https://gitee.com/wugenqiang/PictureBed/raw/master/images01/20200716201955.png);
+      height: 30px;
+      background-size: 40px;
+      background-repeat: no-repeat;
+      background-color: #1C1C1C;
+      background-position: 10px 10px;
+    }
+    /*代码块头部图标 end*/
+
+    .markdown-section pre>code {
+      color: #c0c3c1 !important;
+      font-family: 'Inconsolata', consolas,"PingFang SC", "Microsoft YaHei", monospace !important;
+      background-color: #212121 !important;    //#accfff  #282c34
+      font-size: 15px !important;
+      white-space: pre !important;
+      line-height: 1.5 !important;
+      -moz-tab-size: 4 !important;
+      -o-tab-size: 4 !important;
+      tab-size: 4 !important;
+      /*border-radius: .3em;*/
+    }
+
+    ol, ul, li{
+      line-height: 27px !important;
+      font-size: 16px !important;
+    }
+    @media (min-width:600px) {
+      .markdown-section pre>code {
+        font-size: 15px !important;
+        letter-spacing: 1.1px !important;
+      }
+
+    }
+    @media (max-width:600px) {
+      .markdown-section pre>code {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 16px !important;
+      }
+      pre:after {
+        content: "" !important;
+      }
+    }
+    section.cover h1 {
+      margin: 0;
+    }
+
+    pre {
+      background-color: #212121 !important;
+    }
+
+    @media (min-width:600px) {
+      pre code {
+        /*box-shadow: 2px 1px 20px 2px #aaa;*/
+        /*border-radius: 10px !important;*/
+        padding-left: 20px !important;
+      }
+
+    }
+
+    @media (max-width:600px) {
+      pre {
+        padding-left: 3px !important;
+        padding-right: 3px !important;
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        box-shadow: 0px 0px 20px 0px #f7f7f7 !important;
+      }
+
+      /*代码块复制按钮默认隐藏*/
+      .docsify-copy-code-button {
+        display: none;
+      }
+
+      .advertisement{
+        display: none;
+      }
+
+    }
+
+    .markdown-section pre {
+      padding-left: 0 !important;
+      padding-right: 0px !important;
+    }
+
+    .markdown-section {
+      margin: 0 3.2% !important;
+    }
+
+    /*修改代码块代码颜色显示*/
+    .token.directive.keyword{
+      color: #4faee2 !important;
+    }
+
+    .token.keyword{
+      color: #c678dd !important;
+    }
+
+    .token.comment{
+      color: #737c8b !important;
+    }
+
+    .token.tag{
+      color: #a589ad !important;
+    }
+
+    .token.attr-name{
+      color: #de916c !important;
+    }
+
+    .token.attr-value{
+      color: #4faee2 !important;
+    }
+
+    .token.macro.property{
+      color: #4faee2 !important;
+    }
+
+    .token.function{
+      color: #e6b456 !important;
+    }
+    .token.string{
+      color: #98b755 !important;
+    }
+    .token.punctuation{
+      color: #c0c3c1 !important;
+    }
+
+    .token.number{
+      color:#c0c3c1  !important;
+    }
+
+    a.section-link{
+      font-size: .9rem !important;
+    }
+
+    .advertisement {
+      position: fixed;
+      right: 20px;
+      top: 100px;
+      width: 110px;
+      box-shadow: -1px 0 2px 0px #c5ebda;
+      padding: 10px;
+      z-index: 99;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .advertisement p,
+    h4 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .advertisement .Tencent_code h4 {
+      font-size: 15px;
+      color: #25a46a;
+      margin-bottom: 10px;
+    }
+
+    /*滚动条样式 start*/
+    /* 滚动条宽度 */
+    ::-webkit-scrollbar{width:5px;}
+    /* 滚动条颜色 */
+    ::-webkit-scrollbar-thumb{
+      background: #33a9dc;
+      background-image: linear-gradient(#6ecd56, #33a9dc, #cb6196, #c16290);
+      border-radius: 2em;
+    }
+
+  </style>
+
+</head>
+<body>
+<div id="app">🏃‍🏃‍🏃‍💨 加载中...</div>
+
+<div class="aside_container">
+    <div class="advertisement">
+      <div class="Tencent_code">
+        <h4>关注作者公众号</h4>
+        <p style="font-size: 12px;">暖蓝笔记</p>
+        <img src="https://img-blog.csdnimg.cn/20210306102406387.PNG" alt="EnjoyToShare" />
+      </div>
+    </div>
+</div>
+
+  <script>
+    window.$docsify = {
+      name: "<p>🍟  蓝蓝博客</p>",
+      //nameLink: 'https://notebook.js.org/',
+      //repo: 'wugenqiang/NoteBook',
+      themeColor: '#007be8', // 主题颜色
+      //loadSidebar: true,//_sidebar.md如果为真，则从_sidebar.md文件加载边栏，否则从指定的路径加载
+      auto2top: true,  //当路线改变时,滚动到屏幕的顶部
+      //loadNavbar: true,//_navbar.md如果为真，则从_navbar.md文件加载navbar ，否则从指定的路径加载
+      mergeNavbar: true,//Navbar将在小屏幕上与侧边栏合并
+      executeScript: true,//执行页面上的脚本。只解析第一个脚本标记（演示）。如果存在Vue，则默认开
+      maxLevel: 6,//最大的内容表级别
+      subMaxLevel: 6,//在自定义边栏中添加目录（TOC)
+      externalLinkTarget: '_blank', //外链打开方式：_blank表示在新标签页中打开
+      coverpage: true,
+      onlyCover: true,
+      topMargin: 60,//调整top
+      //executeScript: true,//执行页面上的脚本，仅解析第一个脚本标签
+      search: {
+        paths: 'auto',
+        placeholder: '🔍 搜索',
+        noData: '😒 找不到结果',
+        // Headline depth, 1 - 6
+        depth: 6,
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+      },//添加搜索框
+      // 谷歌分析 SEO
+      ga: 'UA-164658031-2',
+
+      footer: {
+        copy: '<div class = "over" >完结</div><br/><span>谢谢~~~😆😏 ❤️ 打赏地址：<a href="xx" target="_blank">xx</a></span><iframe src="xx" style="overflow-x:hidden;overflow-y:hidden; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe><br/><span id="sitetime"></span><br/><span>Copyright &copy; 2021 - 至今</span>',
+        auth: ' <a href="xx" target="_blank">🏷️ EnjoyToShare Blog</a> <span> 一个人可以走的很快，但一群人才能走的更远！</span>',
+        pre: '<hr/>',
+        style: 'text-align: left;',
+      },//添加页脚
+
+      markdown: {
+        renderer: {
+          code: function(code, lang, base=null) {
+
+            if (lang === "dot") {
+              return (
+                      '<div class="viz">'+ Viz(code, "SVG")+'</div>'
+              );
+            }
+
+            var pdf_renderer = function(code, lang, verify) {
+              function unique_id_generator(){
+                function rand_gen(){
+                  return Math.floor((Math.random()+1) * 65536).toString(16).substring(1);
+                }
+                return rand_gen() + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + rand_gen() + rand_gen();
+              }
+              if(lang && !lang.localeCompare('pdf', 'en', {sensitivity: 'base'})){
+                if(verify){
+                  return true;
+                }else{
+                  var divId = "markdown_code_pdf_container_" + unique_id_generator().toString();
+                  var container_list = new Array();
+                  if(localStorage.getItem('pdf_container_list')){
+                    container_list = JSON.parse(localStorage.getItem('pdf_container_list'));
+                  }
+                  container_list.push({"pdf_location": code, "div_id": divId});
+                  localStorage.setItem('pdf_container_list', JSON.stringify(container_list));
+                  return (
+                          '<div style="margin-top:'+ PDF_MARGIN_TOP +'; margin-bottom:'+ PDF_MARGIN_BOTTOM +';" id="'+ divId +'">'
+                          + '<a href="'+ code + '"> Link </a> to ' + code +
+                          '</div>'
+                  );
+                }
+              }
+              return false;
+            }
+            if(pdf_renderer(code, lang, true)){
+              return pdf_renderer(code, lang, false);
+            }
+            //return this.origin.code.apply(this, arguments);
+            return (base ? base : this.origin.code.apply(this, arguments));
+          }
+        }
+      },
+
+    }
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="./plugin/search.min.js"></script>
+  <script src="./plugin/zoom-image.min.js"></script>
+
+  <!-- 支持 DOT 语言 -->
+  <script src="./plugin/viz.js"></script>
+  <!-- 支持 LaTex 语言 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+
+  <!-- 添加 PDF 页面展示功能 -->
+  <!-- PDFObject.js is a required dependency of this plugin -->
+  <!--<script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>-->
+  <script src="./plugin/pdfobject.min.js"></script>
+  <!-- This is the source code of the pdf embed plugin -->
+  <script src="./plugin/docsify-pdf-embed.js"></script>
+
+  <!-- 复制代码-->
+  <script src="./plugin/docsify-copy-code.min.js"></script>
+
+  <!-- 回到顶部功能 -->
+  <script src="./plugin/jquery.js"></script>
+  <script src="./plugin/jquery.goup.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.goup({
+        trigger: 100,
+        bottomOffset: 52,
+        locationOffset: 25,
+        //title: 'TOP',
+        titleAsText: true
+      });
+    });
+  </script>
+
+  <!-- 代码块样式优化-->
+  <script src="./plugin/prism-c.js"></script>
+  <!--<script src="//unpkg.com/prismjs/components/prism-cpp.js"></script>-->
+  <script src="./plugin/prism-cpp.js"></script>
+  <script src="./plugin/prism-css.js"></script>
+  <script src="./plugin/prism-docker.js"></script>
+  <script src="./plugin/prism-java.js"></script>
+  <script src="./plugin/prism-javascript.js"></script>
+  <script src="./plugin/prism-json.js"></script>
+  <script src="./plugin/prism-latex.js"></script>
+  <script src="./plugin/prism-sql.js"></script>
+  <script src="./plugin/prism-markdown.js"></script>
+  <script src="./plugin/prism-bash.min.js"></script>
+  <script src="./plugin/prism-php.min.js"></script>
+  <script src="./plugin/prism-scala.min.js"></script>
+  <script src="./plugin/prism-nginx.min.js"></script>
+  <script src="./plugin/prism-json.min.js"></script>
+  <script src="./plugin/prism-markdown.min.js"></script>
+  <script src="./plugin/prism-python.js"></script>
+  <script src="./plugin/js/prism-yaml.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/prism-go.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/prism-matlab.js"></script>
+
+  <!-- 使用 Gitter 实现一个 IM 即时通讯聊天室功能
+  <script>
+    ((window.gitter = {}).chat = {}).options = {
+      room: 'enjoytoshare/community'
+    };
+  </script> -->
+  <script src="./plugin/sidecar.v1.js" async defer></script>
+
+  <!--爱心特效 mouse click -->
+  <!-- <script src="./plugin/click_heart.js"></script> -->
+
+  <!-- 复制提醒 -->
+  <script src="./plugin/sweetalert.min.js"></script>
+  <script>
+    document.body.oncopy = function () {
+     swal("复制成功 🎉",
+             "若要转载或引用请务必保留原文链接，并申明来源。如果你觉得本仓库不错，那就来 GitHub 给个 Star 吧 😊   - by 蓝蓝",
+             "success"); };
+  </script>
+
+  <!-- 添加页脚 -->
+  <script src="./plugin/docsify-footer-enh.min.js"></script>
+
+  <!-- 添加网站运行时间统计 -->
+  <script language=javascript>
+      function siteTime() {
+         window.setTimeout("siteTime()", 1000);
+         var seconds = 1000;
+         var minutes = seconds * 60;
+         var hours = minutes * 60;
+         var days = hours * 24;
+         var years = days * 365;
+         var today = new Date();
+         var todayYear = today.getFullYear();
+         var todayMonth = today.getMonth() + 1;
+         var todayDate = today.getDate();
+         var todayHour = today.getHours();
+         var todayMinute = today.getMinutes();
+         var todaySecond = today.getSeconds();
+         /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+         year - 作为date对象的年份，为4位年份值
+         month - 0-11之间的整数，做为date对象的月份
+         day - 1-31之间的整数，做为date对象的天数
+         hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+         minutes - 0-59之间的整数，做为date对象的分钟数
+         seconds - 0-59之间的整数，做为date对象的秒数
+         microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+         var t1 = Date.UTC(2021, 11, 05, 22, 22, 22); //北京时间
+         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+         var diff = t2 - t1;
+         var diffYears = Math.floor(diff / years);
+         var diffDays = Math.floor((diff / days) - diffYears * 365);
+         var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+         var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+         var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+         document.getElementById("sitetime").innerHTML = " 本站已安全运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分 " + diffSeconds + " 秒 ";
+      }
+      siteTime();
+  </script>
+
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+  L2Dwidget.init({
+    "model": {
+      //jsonpath控制显示那个小萝莉模型，
+      //(切换模型需要改动)
+      jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+      "scale": 1
+    },
+    "display": {
+      "position": "right", //看板娘的表现位置
+      "width": 70,  //小萝莉的宽度
+      "height": 140, //小萝莉的高度
+      "hOffset": 35,
+      "vOffset": -20
+    },
+    "mobile": {
+      "show": true,
+      "scale": 0.5
+    },
+    "react": {
+      "opacityDefault": 0.7,
+      "opacityOnHover": 0.2
+    }
+  });
+</script>
+
+<!-- 访问量统计 -->
+<script async src="./plugin/js/busuanzi.pure.mini.js"></script>
+
+<!-- 谷歌分析 -->
+<script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
+
+  <!-- 实现离线化 -->
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('pwa.js')
+    }
+  </script>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+/*鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("蓝蓝","上岸", "OFFER多多", "公众号暖蓝笔记");
+        var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "#ff6651"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+
+</body>
+</html>

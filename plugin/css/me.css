@@ -1,0 +1,11 @@
+/*结束文章符号*/
+.over {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000001;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin: 20px auto 5px;
+    text-shadow: 0 0 black;
+}
