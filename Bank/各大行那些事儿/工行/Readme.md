@@ -423,15 +423,9 @@ Github不知道会做到什么时候，才一个月时间，现在已经有些�
 
 ## 总结
 
-工行就到这了，在各地的待遇相比其他行研发中心偏高，大家加油。过两天见~~
+工行就到这了，在各地的待遇相比其他行研发中心偏高，大家加油。过两天见~~，如果想要进交流群的小伙伴，叫我记得备注哈。
 
-<br>
 
-<span id="busuanzi_container_site_pv" style='display:none'>
-    👀 本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
-</span>
-<span id="busuanzi_container_site_uv" style='display:none'>
-    | 🚴‍♂️ 本站总访客数：<span id="busuanzi_value_site_uv"></span> 人
-</span>
-
-<br>
+<div class="dv">
+    <img class="dv_img" src="https://img-blog.csdnimg.cn/bb348380fec747c3aa249ee788f739d4.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5piv56iL5bqP5ZGY5bCP6LSx,size_1,color_FFFFFF,t_70,g_se,x_16" height="200" width="200"/> 
+</div>

@@ -82,6 +82,10 @@
 
 [🤗:数据库笔试题突击第二期SQL实战](Java/Java笔试/Java笔试第二期/Readme.md)
 
+> C/C++ 笔试专题
+
+
+
 ## 🌼4 面试专题
 
 [第一期 | 数据库理论20题]()
@@ -104,29 +108,29 @@
 
  [😮:兴业银行面试分享](拿到OFFER/兴业银行面试分享/Readme.md)
 
-#  🍓程序人生
+#  ✍️程序人生
 
-[大三了，怎么找到男票/女票呀？](http://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453505101&idx=1&sn=b98e656c70981553b2615b730e23abbc&chksm=8c98f23ebbef7b2862364cdb5bdc0645fe25c81bf466e61339558c0231793589aa4398e7a8b0#rd)
+[🥰大三了，怎么找到男票/女票呀？](http://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453505101&idx=1&sn=b98e656c70981553b2615b730e23abbc&chksm=8c98f23ebbef7b2862364cdb5bdc0645fe25c81bf466e61339558c0231793589aa4398e7a8b0#rd)
 
-[离谱的相亲经历](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453505804&idx=1&sn=41bf8da4f76da28eb2d8d79c17995b80&chksm=8c98f17fbbef78697f522300133db7970dfee6a05d3f46265a87c0e4e2b59a8827e390b3c79c&token=1639104751&lang=zh_CN#rd)
+[😍离谱的相亲经历](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453505804&idx=1&sn=41bf8da4f76da28eb2d8d79c17995b80&chksm=8c98f17fbbef78697f522300133db7970dfee6a05d3f46265a87c0e4e2b59a8827e390b3c79c&token=1639104751&lang=zh_CN#rd)
 
-[相伴的「两元钱」是这么特别](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453505651&idx=1&sn=836e9f0bcb4fbf3b9ccc8c9d813e2145&chksm=8c98f000bbef7916d023aa81d8a958db3119f9299ab2df74cdd5c9aba14ee67ae359f9040c2b&token=1639104751&lang=zh_CN#rd)
+[🤩相伴的「两元钱」是这么特别](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453505651&idx=1&sn=836e9f0bcb4fbf3b9ccc8c9d813e2145&chksm=8c98f000bbef7916d023aa81d8a958db3119f9299ab2df74cdd5c9aba14ee67ae359f9040c2b&token=1639104751&lang=zh_CN#rd)
 
-[别回头！试试吧](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453505675&idx=1&sn=aafb3876f837ac323087ea1050642bbf&chksm=8c98f0f8bbef79eeeeadfe36027c59185df1d0cee16feb9a2c5d3744813c8b898923ef1eee0c&token=1639104751&lang=zh_CN#rd)
+[😘别回头！试试吧](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453505675&idx=1&sn=aafb3876f837ac323087ea1050642bbf&chksm=8c98f0f8bbef79eeeeadfe36027c59185df1d0cee16feb9a2c5d3744813c8b898923ef1eee0c&token=1639104751&lang=zh_CN#rd)
 
-[「青春」回母校的一次分享](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453506493&idx=1&sn=c834a836ba5debcc95d3378106e71540&chksm=8c98ffcebbef76d8bc64d71465321f093143039ab8610c033a5e16270e6d8d2178c5b3e4be4e&token=1639104751&lang=zh_CN#rd)
+[😚「青春」回母校的一次分享](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453506493&idx=1&sn=c834a836ba5debcc95d3378106e71540&chksm=8c98ffcebbef76d8bc64d71465321f093143039ab8610c033a5e16270e6d8d2178c5b3e4be4e&token=1639104751&lang=zh_CN#rd)
 
-[双非也不是一无是处](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453506294&idx=1&sn=63f1532f09a6dcc4c0574b8fda3c4af1&chksm=8c98fe85bbef77937e04bc3be7fcb237994655f9f844fff8071a17e87dc7bb2350ceadfd88bb&token=1639104751&lang=zh_CN#rd)
+[😗双非也不是一无是处](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453506294&idx=1&sn=63f1532f09a6dcc4c0574b8fda3c4af1&chksm=8c98fe85bbef77937e04bc3be7fcb237994655f9f844fff8071a17e87dc7bb2350ceadfd88bb&token=1639104751&lang=zh_CN#rd)
 
-[开篇---返工](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453505923&idx=1&sn=657a22d64d64b3852eb161f5a5e3954f&chksm=8c98f1f0bbef78e6fac957fcfc5909f4067e59e984ef7b41541918db17c770542655c8523f0e&token=1639104751&lang=zh_CN#rd)
+[😛开篇---返工](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453505923&idx=1&sn=657a22d64d64b3852eb161f5a5e3954f&chksm=8c98f1f0bbef78e6fac957fcfc5909f4067e59e984ef7b41541918db17c770542655c8523f0e&token=1639104751&lang=zh_CN#rd)
 
-[2021国庆节](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453507982&idx=1&sn=f61bc5bd2ec4aa3f62afa0686ef20ad8&chksm=8c98f9fdbbef70eb54227ef22150d26554b33696c9cbdce4487dba0a8df73d542f37edf10716&token=1639104751&lang=zh_CN#rd)
+[😜2021国庆节](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453507982&idx=1&sn=f61bc5bd2ec4aa3f62afa0686ef20ad8&chksm=8c98f9fdbbef70eb54227ef22150d26554b33696c9cbdce4487dba0a8df73d542f37edf10716&token=1639104751&lang=zh_CN#rd)
 
-[蓝蓝祝大家中秋快乐](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453507921&idx=1&sn=497695762d75f20c00ec8a830ae46b7a&chksm=8c98f922bbef7034225f2fbab3e04f6f59c7907e45f05ee9142eac694de72020f6589ae1483e&token=1639104751&lang=zh_CN#rd)
+[🤪蓝蓝祝大家中秋快乐](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453507921&idx=1&sn=497695762d75f20c00ec8a830ae46b7a&chksm=8c98f922bbef7034225f2fbab3e04f6f59c7907e45f05ee9142eac694de72020f6589ae1483e&token=1639104751&lang=zh_CN#rd)
 
 # 🥞计算机基础
 
-## 1 操作系统
+## 🦸‍♂️1 操作系统
 
 这部分内容属于计算基础模块，对于银行国企的同学而言，背诵理解八股文文章即可。
 
@@ -140,34 +144,43 @@
 
 [🤔操作系统经典30问]()
 
-## 2 计算机网络
+## 👼2 计算机网络
 
-[TCP/IP常见攻击手段](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453505998&idx=1&sn=77fb8ca98dc34954de8e193e787c5659&chksm=8c98f1bdbbef78abddfe8dd69a7650d7083d7b3c137767da3ea70d5ffc2b9c908da30f04ac68&token=1639104751&lang=zh_CN#rd)
+[🕵️‍♀️TCP/IP常见攻击手段](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453505998&idx=1&sn=77fb8ca98dc34954de8e193e787c5659&chksm=8c98f1bdbbef78abddfe8dd69a7650d7083d7b3c137767da3ea70d5ffc2b9c908da30f04ac68&token=1639104751&lang=zh_CN#rd)
 
-[计算机网络经典20问]()
+[💂计算机网络经典20问]()
 
-[TCP万字详解]()
+[👩‍✈️TCP万字详解]()
 
-[20张图了解HTTP]()
+[👷‍♀️20张图了解HTTP]()
 
-[输入URL那一刻发生了什么]()
+[👩‍🎤输入URL那一刻发生了什么]()
 
-[50图告诉你IP是什么]()
+[👨‍🔬50图告诉你IP是什么]()
 
-[没有ICMP还真干不了大事儿]()
+[👩‍🏫没有ICMP还真干不了大事儿]()
 
-[UDP你别怕，尽管冲]()
+[👨‍🔧UDP你别怕，尽管冲]()
 
-## 3 数据结构与算法
+## 🧚‍♀️3 数据结构与算法
 
 [62图给你讲Docker](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453506139&idx=1&sn=66a1570a92fccfee39d56f941191cb50&chksm=8c98fe28bbef773ebf862f8791ce33f5fe2647814ecb3d444e30291e4950ed3efae3ee52c918&token=1639104751&lang=zh_CN#rd)
 
-## 4 数据库
+## 🧜‍♀️4 数据库
+
+# 👸后端技术必备
+
+## 1 容器技术
+
+[👲万字Docker基础教程](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453506139&idx=1&sn=66a1570a92fccfee39d56f941191cb50&chksm=8c98fe28bbef773ebf862f8791ce33f5fe2647814ecb3d444e30291e4950ed3efae3ee52c918&token=1639104751&lang=zh_CN#rd)
+
+## 2 中间件技术
+
 
 ## 常用工具
 
 [Git]()
 
-[「成都」拿下这80家互联网企业](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453506872&idx=1&sn=360e4203220f26b9ed0d314247624255&chksm=8c98fd4bbbef745dd4835ecf52b14b0a8c056f0e095575465795c47ff87613a7586878b28ef6&token=1639104751&lang=zh_CN#rd)
+[🦹「成都」拿下这80家互联网企业](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453506872&idx=1&sn=360e4203220f26b9ed0d314247624255&chksm=8c98fd4bbbef745dd4835ecf52b14b0a8c056f0e095575465795c47ff87613a7586878b28ef6&token=1639104751&lang=zh_CN#rd)
 
 [妹妹不慌，姐姐告诉你上岸的学习网站](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453507762&idx=1&sn=fadb3e81917d5cbc42e8236d08007eb8&chksm=8c98f8c1bbef71d73646d1ae3ad75369a1e0c2e6a69914045e4d9750d88e58cfc66767fc6a17&token=1639104751&lang=zh_CN#rd)
