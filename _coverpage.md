@@ -30,7 +30,7 @@
 [![](https://img.shields.io/badge/version-v1.0-brightgreen.svg)](https://gitee.com/lanlanBank/lanlan-interview)
 
 
-[Gitee](<https://gitee.com/LDeCunZai/lanlan-interview>)
+[Gitee](<https://gitee.com/lanlanBank/lanlan-interview>)
 [Github](<>)
 [开始阅读](README.md)
 
