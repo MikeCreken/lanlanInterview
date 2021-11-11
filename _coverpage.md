@@ -21,13 +21,13 @@
 
 - 蓝蓝博客，看了就上岸的博客。
 
-[![star](https://gitee.com/LDeCunZai/lanlan-interview/badge/star.svg?theme=dark)](https://gitee.com/LDeCunZai/lanlan-interview)
-[![fork](https://gitee.com/LDeCunZai/lanlan-interview/badge/fork.svg?theme=dark)](https://gitee.com/LDeCunZai/lanlan-interview)
+[![star](https://gitee.com/lanlanBank/lanlan-interview/badge/star.svg?theme=dark)](https://gitee.com/lanlanBank/lanlan-interview)
+[![fork](https://gitee.com/lanlanBank/lanlan-interview/badge/fork.svg?theme=dark)](https://gitee.com/lanlanBank/lanlan-interview)
 <!-- () 后面是点击后的链接(自定义作者名) -->
-[![](https://img.shields.io/badge/Author-蓝蓝-orange.svg)](https://gitee.com/LDeCunZai/lanlan-interview)
+[![](https://img.shields.io/badge/Author-蓝蓝-orange.svg)](https://gitee.com/lanlanBank/lanlan-interview)
 
 <!-- () 后面是点击后的链接(自定义版本号) -->
-[![](https://img.shields.io/badge/version-v1.0-brightgreen.svg)](https://gitee.com/LDeCunZai/lanlan-interview)
+[![](https://img.shields.io/badge/version-v1.0-brightgreen.svg)](https://gitee.com/lanlanBank/lanlan-interview)
 
 
 [Gitee](<https://gitee.com/LDeCunZai/lanlan-interview>)
