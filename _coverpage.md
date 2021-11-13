@@ -22,6 +22,7 @@
 - 蓝蓝博客，看了就上岸的博客。
 
 [![star](https://gitee.com/lanlanBank/lanlan-interview/badge/star.svg?theme=dark)](https://gitee.com/lanlanBank/lanlan-interview)
+[![star](https://github.com/MikeCreken/-lanlanInterview.git/badge/star.svg?theme=dark)](https://github.com/MikeCreken/-lanlanInterview.git)
 [![fork](https://gitee.com/lanlanBank/lanlan-interview/badge/fork.svg?theme=dark)](https://gitee.com/lanlanBank/lanlan-interview)
 <!-- () 后面是点击后的链接(自定义作者名) -->
 [![](https://img.shields.io/badge/Author-蓝蓝-orange.svg)](https://gitee.com/lanlanBank/lanlan-interview)
@@ -31,7 +32,7 @@
 
 
 [Gitee](<https://gitee.com/lanlanBank/lanlan-interview>)
-[Github](<>)
+[Github](<https://github.com/MikeCreken/-lanlanInterview.git>)
 [开始阅读](README.md)
 
  

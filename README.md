@@ -4,7 +4,7 @@
 
 从 2021年6月 开始写关于国企/银行相关的面试，差不多半年了，期间和部分同学走完了完整的面试。
 
-希望这些内容能够让更多的小伙伴受益，不过，记得给我去 **Star** [我的Github](https://gitee.com/LDeCunZai/lanlan-interview)一下下哟，听说 **Star** 的小伙伴就很容易上岸呢。
+希望这些内容能够让更多的小伙伴受益，不过，记得给我去 **Star** [我的Github](https://github.com/MikeCreken/-lanlanInterview)一下下哟，听说 **Star** 的小伙伴就很容易上岸呢。
 
 当然也建立了自己群，如果大家想进群，最好加我的时候自我介绍一下哈，我晚上会统一同意哦。
 
