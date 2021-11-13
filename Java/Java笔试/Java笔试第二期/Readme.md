@@ -970,20 +970,43 @@ HashMap,存储元素时，元素会作为HashMap的key存入，而HashMap的key�
 
 ## 总结
 
-好了，就到这了，花点时间做一遍，一点点的进步直到上岸，加油~~~
+后面会慢慢的迭代这些内容，虽然十一月了，大家也不要放弃哟，机会都是留给准备好的你们呢。好了，拜拜~~~
+
+稍等，记得去我的 Github 点个 Star~~~
+
+蓝蓝的 Github：[点Star就上岸哟](https://github.com/MikeCreken/lanlanInterview)
+
+这里还有一个在线的网站方便大家复习。[](https://lanlanbank.gitee.io/lanlan-interview/#/)
+
+Github不知道会做到什么时候，才一个月时间，现在已经有些人那我这丢丢资料去卖给人家，哎，挺无语的，需要的小伙伴可以去下载，记得给我点个 Star 哈。
+
+，不上岸找我，哼~~
+
+![](https://img-blog.csdnimg.cn/bb60cc286d8b42d7ae925e9176a9a65c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5piv56iL5bqP5ZGY5bCP6LSx,size_1,color_FFFFFF,t_70,g_se,x_16)
 
 蓝蓝的公众号：暖蓝笔记
 
-为了手机端的同学查看，会精细的排版并放在手机端供大家查看。这篇文章被很多大佬转载，目前已有50+的转载量，应该算是干货的文章。
-
 [暖蓝笔记公众号](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453507437&idx=1&sn=7c805cc389e91e7c2da8affa8bcacbbf&chksm=8c98fb1ebbef72089666c7b716637ab9c8d54b84d9345799dd73ee43560bbdedb3cda62bc1e3&token=112701746&lang=zh_CN#rd)
 
-蓝蓝的星球：蓝蓝银行小分队
 
-上面三个都是免费的资料，这个知识星球是付费的星球，一次付费后的有效期是**一年**，也没其他的原因，只是筛选出一些同学罢了，因为太多人咨询，修改简历，我也想给大家修改，但是精力确实有限。我会把所有的视频资源，PDF 资源放在知识星球，当然，这些资料都是自己手打上去了，并不是随便拿来就糊弄了，实时更新罗。
+**蓝蓝的星球：蓝蓝银行小分队**
 
-![image-20211017162513334](C:\Users\Administrator.USER-20210731DH\AppData\Roaming\Typora\typora-user-images\image-20211017162513334.png)
+这个星球将给大家进行**简历修改**(针对性的修改)及所有文章**PDF**版本的领取，一定是物有所值的啦。
 
-同时也会看到各大行的各种招聘技巧。下面是优惠劵（节省15元），一共40张，如果优惠劵没有了，也可以私信我。
 
-![海报 (1)](C:\Users\Administrator.USER-20210731DH\Desktop\海报 (1).png)
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/5b35f132dd5e490abbc64f08aef7cf56.png" width="50%" height="50%">
+</div>
+
+这些 PDF 的内容大概如下，会实时的更新~~
+
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/3b49ee99608d41438a37458a92be156b.png" width="30%" height="50%">
+</div>
+
+如果你也有想要分享的内容，或者进入银行国企的交流群，我们一起成长，那也可以加我这个专用wx，记得备注"**Github**"
+
+
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/58213272ee7948e9b910d1f00eae6c35.jpg" width="50%" height="50%">
+</div>
