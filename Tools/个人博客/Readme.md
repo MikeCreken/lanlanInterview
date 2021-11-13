@@ -337,7 +337,9 @@ git push gitee master
 
 稍等，记得去我的 Github 点个 Star~~~
 
-蓝蓝的 Github：[文稿下载](https://github.com/MikeCreken/lanlanInterview)
+蓝蓝的 Github：[点Star就上岸哟](https://github.com/MikeCreken/lanlanInterview)
+
+这里还有一个在线的网站方便大家复习。[蓝蓝的个人博客](https://lanlanbank.gitee.io/lanlan-interview/#/)
 
 Github不知道会做到什么时候，才一个月时间，现在已经有些人那我这丢丢资料去卖给人家，哎，挺无语的，需要的小伙伴可以去下载，记得给我点个 Star 哈。
 
@@ -349,12 +351,15 @@ Github不知道会做到什么时候，才一个月时间，现在已经有些�
 
 [暖蓝笔记公众号](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453507437&idx=1&sn=7c805cc389e91e7c2da8affa8bcacbbf&chksm=8c98fb1ebbef72089666c7b716637ab9c8d54b84d9345799dd73ee43560bbdedb3cda62bc1e3&token=112701746&lang=zh_CN#rd)
 
-蓝蓝的知乎：暖蓝笔记
-
-我的知乎，会不定期的去回答一些问题，当然了，大部分内容也就是我平时分享总结给大家的内容。
 
 **蓝蓝的星球：蓝蓝银行小分队**
 
 这个星球将给大家进行**简历修改**(针对性的修改)及所有文章**PDF**版本的领取，一定是物有所值的啦。
 
 ![](https://img-blog.csdnimg.cn/5b35f132dd5e490abbc64f08aef7cf56.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5piv56iL5bqP5ZGY5bCP6LSx,size_1,color_FFFFFF,t_70,g_se,x_16)
+
+![](https://img-blog.csdnimg.cn/3b49ee99608d41438a37458a92be156b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5piv56iL5bqP5ZGY5bCP6LSx,size_1,color_FFFFFF,t_70,g_se,x_16)
+
+如果你也有想要分享的内容，或者进入银行国企的交流群，我们一起成长，那也可以加我这个专用wx，记得备注"Github"
+
+![](https://img-blog.csdnimg.cn/58213272ee7948e9b910d1f00eae6c35.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5piv56iL5bqP5ZGY5bCP6LSx,size_1,color_FFFFFF,t_70,g_se,x_16)
