@@ -385,47 +385,43 @@ int n=i;//拆箱
 
 这是工行的面试，先去回答下工行罗，宇宙行，资本雄厚，业务品种齐全，抵抗分析那能力强等等。
 
-最后，如果需要 **PDF** 版本，则下方点赞，在看，转发后，找我回复[**工行**]即可。当然，如果为了更加方便下载资料，一个更好的学习氛围，也可以进入我刚建立的知识星球哟。
+后面会慢慢的迭代这些内容，虽然十一月了，大家也不要放弃哟，机会都是留给准备好的你们呢。好了，拜拜~~~
 
-**由于公众号的更新，需要大家设置为星标才能第一时间看到推送哦。**同时，也将本文原稿开源到了 **Github**，需要的自取，记得给昂 **Star** 哈
+稍等，记得去我的 Github 点个 Star~~~
 
-蓝蓝的 Github：[文稿下载](https://github.com/MikeCreken/Interview-site-Lan)
+蓝蓝的 Github：[点Star就上岸哟](https://github.com/MikeCreken/lanlanInterview)
 
-![image-20210911093128546](C:\Users\Administrator.USER-20210731DH\AppData\Roaming\Typora\typora-user-images\image-20210911093128546.png)
+这里还有一个在线的网站方便大家复习。[](https://lanlanbank.gitee.io/lanlan-interview/#/)
 
 Github不知道会做到什么时候，才一个月时间，现在已经有些人那我这丢丢资料去卖给人家，哎，挺无语的，需要的小伙伴可以去下载，记得给我点个 Star 哈。
 
-蓝蓝的公众号：暖蓝笔记
+，不上岸找我，哼~~
 
-为了手机端的同学查看，会精细的排版并放在手机端供大家查看。这篇文章被很多大佬转载，目前已有50+的转载量，应该算是干货的文章。
+![](https://img-blog.csdnimg.cn/bb60cc286d8b42d7ae925e9176a9a65c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5piv56iL5bqP5ZGY5bCP6LSx,size_1,color_FFFFFF,t_70,g_se,x_16)
+
+蓝蓝的公众号：暖蓝笔记
 
 [暖蓝笔记公众号](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453507437&idx=1&sn=7c805cc389e91e7c2da8affa8bcacbbf&chksm=8c98fb1ebbef72089666c7b716637ab9c8d54b84d9345799dd73ee43560bbdedb3cda62bc1e3&token=112701746&lang=zh_CN#rd)
 
-蓝蓝的知乎：暖蓝笔记
 
-我的知乎，会不定期的去回答一些问题，当然了，大部分内容也就是我平时分享总结给大家的内容。
+**蓝蓝的星球：蓝蓝银行小分队**
 
-蓝蓝的视频号：暖蓝笔记
-
-视频号入口就在微信朋友圈下面，是将我平时的文章，采用音视频的方式呈现，万一有的说声音好听，听听也就懂了呢，嘻嘻。
-
-![image-20210911085613337](C:\Users\Administrator.USER-20210731DH\AppData\Roaming\Typora\typora-user-images\image-20210911085613337.png)
-
-蓝蓝的星球：蓝蓝银行小分队
-
-上面三个都是免费的资料，这个知识星球是付费的星球，一次付费后的有效期是**一年**，也没其他的原因，只是筛选出一些同学罢了，因为太多人咨询，修改简历，我也想给大家修改，但是精力确实有限。我会把所有的学习资源放在知识星球，同时也会看到各大行的各种招聘技巧。(注意，知识星球的平台最低要求是50元，我感觉太贵了，就去申请了8张25元的优惠卷，30张20元的优惠卷，40张10元的优惠卷)，先到先得吧，当日时间是 2021年9月11日。
-
-![image-20210911085349990](C:\Users\Administrator.USER-20210731DH\AppData\Roaming\Typora\typora-user-images\image-20210911085349990.png)
+这个星球将给大家进行**简历修改**(针对性的修改)及所有文章**PDF**版本的领取，一定是物有所值的啦。
 
 
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/5b35f132dd5e490abbc64f08aef7cf56.png" width="50%" height="50%">
+</div>
+
+这些 PDF 的内容大概如下，会实时的更新~~
+
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/3b49ee99608d41438a37458a92be156b.png" width="30%" height="50%">
+</div>
+
+如果你也有想要分享的内容，或者进入银行国企的交流群，我们一起成长，那也可以加我这个专用wx，记得备注"**Github**"
 
 
-
-## 总结
-
-工行就到这了，在各地的待遇相比其他行研发中心偏高，大家加油。过两天见~~，如果想要进交流群的小伙伴，叫我记得备注哈。
-
-
-<div class="dv">
-    <img class="dv_img" src="https://img-blog.csdnimg.cn/bb348380fec747c3aa249ee788f739d4.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5piv56iL5bqP5ZGY5bCP6LSx,size_1,color_FFFFFF,t_70,g_se,x_16" height="200" width="200"/> 
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/58213272ee7948e9b910d1f00eae6c35.jpg" width="50%" height="50%">
 </div>
