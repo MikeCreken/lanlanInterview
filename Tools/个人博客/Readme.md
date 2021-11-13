@@ -339,7 +339,7 @@ git push gitee master
 
 蓝蓝的 Github：[点Star就上岸哟](https://github.com/MikeCreken/lanlanInterview)
 
-这里还有一个在线的网站方便大家复习。[蓝蓝的个人博客](https://lanlanbank.gitee.io/lanlan-interview/#/)
+这里还有一个在线的网站方便大家复习。[](https://lanlanbank.gitee.io/lanlan-interview/#/)
 
 Github不知道会做到什么时候，才一个月时间，现在已经有些人那我这丢丢资料去卖给人家，哎，挺无语的，需要的小伙伴可以去下载，记得给我点个 Star 哈。
 
@@ -356,10 +356,20 @@ Github不知道会做到什么时候，才一个月时间，现在已经有些�
 
 这个星球将给大家进行**简历修改**(针对性的修改)及所有文章**PDF**版本的领取，一定是物有所值的啦。
 
-![](https://img-blog.csdnimg.cn/5b35f132dd5e490abbc64f08aef7cf56.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5piv56iL5bqP5ZGY5bCP6LSx,size_1,color_FFFFFF,t_70,g_se,x_16)
 
-![](https://img-blog.csdnimg.cn/3b49ee99608d41438a37458a92be156b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5piv56iL5bqP5ZGY5bCP6LSx,size_1,color_FFFFFF,t_70,g_se,x_16)
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/5b35f132dd5e490abbc64f08aef7cf56.png" width="50%" height="50%">
+</div>
 
-如果你也有想要分享的内容，或者进入银行国企的交流群，我们一起成长，那也可以加我这个专用wx，记得备注"Github"
+这些 PDF 的内容大概如下，会实时的更新~~
 
-<img src="https://img-blog.csdnimg.cn/58213272ee7948e9b910d1f00eae6c35.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_10,text_Q1NETiBA5oiR5piv56iL5bqP5ZGY5bCP6LSx,size_1,color_FFFFFF,t_10,g_se,x_5" style="zoom: 25%;" />
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/3b49ee99608d41438a37458a92be156b.png" width="30%" height="50%">
+</div>
+
+如果你也有想要分享的内容，或者进入银行国企的交流群，我们一起成长，那也可以加我这个专用wx，记得备注"**Github**"
+
+
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/58213272ee7948e9b910d1f00eae6c35.jpg" width="50%" height="50%">
+</div>
