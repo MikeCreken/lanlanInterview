@@ -269,7 +269,30 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>double fun(int m, int n) {	double p, t = 1.0;	int i;	for (i = 1; i <= m; i++) {		t *= i;	}	p = t;	for (t = 1.0, i = 1; i <= n; i++) {		t *= i;	}	p /= t;	for (t = 1.0, i = 1; i <= m - n; i++) {		t *= i;	}	p /= t;	return p;}int main() {	printf("%lf",fun(10,9)); 	return 0;}
+#include <stdio.h>
+
+double fun(int m, int n) {
+	double p, t = 1.0;
+	int i;
+	for (i = 1; i <= m; i++) {
+		t *= i;
+	}
+	p = t;
+	for (t = 1.0, i = 1; i <= n; i++) {
+		t *= i;
+	}
+	p /= t;
+	for (t = 1.0, i = 1; i <= m - n; i++) {
+		t *= i;
+	}
+	p /= t;
+	return p;
+}
+
+int main() {
+	printf("%lf",fun(10,9)); 
+	return 0;
+}
 ```
 
 ## 010 简单迭代
@@ -289,7 +312,22 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>#include <math.h> double fun() {	double x0, x1 = 0.0;	do {		x0 = x1;		x1 = cos(x0);	} while (fabs(x0 - x1) >= 1e-6);	return x1;}int main() {	printf("%lf", fun());	return 0;}
+#include <stdio.h>
+#include <math.h> 
+
+double fun() {
+	double x0, x1 = 0.0;
+	do {
+		x0 = x1;
+		x1 = cos(x0);
+	} while (fabs(x0 - x1) >= 1e-6);
+	return x1;
+}
+
+int main() {
+	printf("%lf", fun());
+	return 0;
+}
 ```
 
 ## 011 数组左下半三角元素中的值全部置成0
@@ -299,7 +337,31 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>#define N 3int fun(int a[][N]) {	int i, j;	for (i = 0; i < N; i++) {		for (j = 0; j <= i; j++) {			a[i][j] = 0;		}	}}int main() {		int a[][3] = {{1,2,3},{2,3,4},{3,4,5}};	fun(a);	int i, j;	for (i = 0; i < 3; i++) {		for (j = 0; j < 3; j++) {			printf("%d ", a[i][j]);		}		printf("\n");	}	return 0;}
+#include <stdio.h>
+#define N 3
+
+int fun(int a[][N]) {
+	int i, j;
+	for (i = 0; i < N; i++) {
+		for (j = 0; j <= i; j++) {
+			a[i][j] = 0;
+		}
+	}
+}
+
+int main() {
+	
+	int a[][3] = {{1,2,3},{2,3,4},{3,4,5}};
+	fun(a);
+	int i, j;
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < 3; j++) {
+			printf("%d ", a[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
 ```
 
 ## 012 数组周边元素的平均值返回给主函数
@@ -309,7 +371,33 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>#define N 3double fun(int w[][N]) {	int i, j;	double s = 0.0;	for (i = 0; i < N; i++) {		s += w[0][i];	} 	for (i = 0; i < N; i++) {		s += w[N - 1][i];	} 	for (i = 0; i < N; i++) {		s += w[i][0];	} 	for (i = 0; i < N; i++) {		s += w[i][N - 1];	} 	s = s - w[0][0] - w[0][N - 1] - w[N - 1][0] - w[N - 1][N - 1];	return s/(4 * N - 4);}   int main() {	int a[][3] = {{1,2,3},{2,3,4},{3,4,5}};	printf("%lf", fun(a));	return 0;}
+#include <stdio.h>
+#define N 3
+
+double fun(int w[][N]) {
+	int i, j;
+	double s = 0.0;
+	for (i = 0; i < N; i++) {
+		s += w[0][i];
+	} 
+	for (i = 0; i < N; i++) {
+		s += w[N - 1][i];
+	} 
+	for (i = 0; i < N; i++) {
+		s += w[i][0];
+	} 
+	for (i = 0; i < N; i++) {
+		s += w[i][N - 1];
+	} 
+	s = s - w[0][0] - w[0][N - 1] - w[N - 1][0] - w[N - 1][N - 1];
+	return s/(4 * N - 4);
+}  
+ 
+int main() {
+	int a[][3] = {{1,2,3},{2,3,4},{3,4,5}};
+	printf("%lf", fun(a));
+	return 0;
+}
 ```
 
 ## 013 求出二维函数组每列中最小元素
@@ -319,7 +407,33 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>#define M 3#define N 3void fun(int tt[M][N], int pp[N]) {	int i, j, min;	for (j = 0; j < N; j++) {		min = tt[0][j];		for (i = 1; i < N; i++) {			if (tt[i][j] < min) {				min = tt[i][j];			}		}		pp[j] = min;	} } int main() {	int a[][3] = {{1,2,3},{2,3,4},{3,4,5}};	int b[3];	fun(a, b);	int i;	for (i = 0; i < 3; i++) {		printf("%d ", b[i]);	}	return 0;}
+#include <stdio.h>
+#define M 3
+#define N 3
+
+void fun(int tt[M][N], int pp[N]) {
+	int i, j, min;
+	for (j = 0; j < N; j++) {
+		min = tt[0][j];
+		for (i = 1; i < N; i++) {
+			if (tt[i][j] < min) {
+				min = tt[i][j];
+			}
+		}
+		pp[j] = min;
+	} 
+}
+ 
+int main() {
+	int a[][3] = {{1,2,3},{2,3,4},{3,4,5}};
+	int b[3];
+	fun(a, b);
+	int i;
+	for (i = 0; i < 3; i++) {
+		printf("%d ", b[i]);
+	}
+	return 0;
+}
 ```
 
 ## 014 二维数组周边元素之和，作为函数值返回
@@ -329,7 +443,33 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>#define N 3int fun(int w[][N]) {	int i, j;	int s = 0;	for (i = 0; i < N; i++) {		s += w[0][i];	} 	for (i = 0; i < N; i++) {		s += w[N - 1][i];	} 	for (i = 0; i < N; i++) {		s += w[i][0];	} 	for (i = 0; i < N; i++) {		s += w[i][N - 1];	} 	s = s - w[0][0] - w[0][N - 1] - w[N - 1][0] - w[N - 1][N - 1];	return s;}   int main() {	int a[][3] = {{1,2,3},{2,3,4},{3,4,5}};	printf("%d", fun(a));	return 0;}
+#include <stdio.h>
+#define N 3
+
+int fun(int w[][N]) {
+	int i, j;
+	int s = 0;
+	for (i = 0; i < N; i++) {
+		s += w[0][i];
+	} 
+	for (i = 0; i < N; i++) {
+		s += w[N - 1][i];
+	} 
+	for (i = 0; i < N; i++) {
+		s += w[i][0];
+	} 
+	for (i = 0; i < N; i++) {
+		s += w[i][N - 1];
+	} 
+	s = s - w[0][0] - w[0][N - 1] - w[N - 1][0] - w[N - 1][N - 1];
+	return s;
+}  
+ 
+int main() {
+	int a[][3] = {{1,2,3},{2,3,4},{3,4,5}};
+	printf("%d", fun(a));
+	return 0;
+}
 ```
 
 ## 015 w后n－1位的数作为函数值返回
@@ -339,7 +479,24 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>unsigned fun(unsigned w) {	unsigned t, s = 0, s1 = 1;	t = w;		while (t > 10) {		s = s + t % 10 * s1;		s1 = s1 * 10;		t = t / 10;	}	return s;}int main() {	unsigned t = 123;	printf("%u", fun(t));	return 0;}
+#include <stdio.h>
+
+unsigned fun(unsigned w) {
+	unsigned t, s = 0, s1 = 1;
+	t = w;	
+	while (t > 10) {
+		s = s + t % 10 * s1;
+		s1 = s1 * 10;
+		t = t / 10;
+	}
+	return s;
+}
+
+int main() {
+	unsigned t = 123;
+	printf("%u", fun(t));
+	return 0;
+}
 ```
 
 ## 016 值保留2位小数
@@ -349,7 +506,22 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>float fun(double h) {	int t;	float s;	h = h * 1000;	t = (h + 5) / 10;	s = t / 100.0;	return s;}int main() {	printf("%.2lf\n", 123.4567);	printf("%.2lf", fun(123.4567));	return 0;}
+#include <stdio.h>
+
+float fun(double h) {
+	int t;
+	float s;
+	h = h * 1000;
+	t = (h + 5) / 10;
+	s = t / 100.0;
+	return s;
+}
+
+int main() {
+	printf("%.2lf\n", 123.4567);
+	printf("%.2lf", fun(123.4567));
+	return 0;
+}
 ```
 
 ## 017 字符串中的内容逆置
@@ -359,7 +531,26 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>#include <string.h>void fun(char *s) {	char ch;	int i;	for (i = 0; i < (strlen(s) - 1) / 2; i++) {		ch = s[i];		s[i] = s[strlen(s) - 1 - i];		s[strlen(s) - 1 - i] = ch;	}}int main() {	char s[100];	gets(s);	fun(&s);	puts(s);	return 0;}
+#include <stdio.h>
+#include <string.h>
+
+void fun(char *s) {
+	char ch;
+	int i;
+	for (i = 0; i < (strlen(s) - 1) / 2; i++) {
+		ch = s[i];
+		s[i] = s[strlen(s) - 1 - i];
+		s[strlen(s) - 1 - i] = ch;
+	}
+}
+
+int main() {
+	char s[100];
+	gets(s);
+	fun(&s);
+	puts(s);
+	return 0;
+}
 ```
 
 ## 018 矩阵(3行3列)的转置
@@ -369,7 +560,36 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>void fun(int array[3][3]) {	int i, j, temp;	for (i = 0; i < 3; i++) {		for (j = 0; j < i; j++) {			temp = array[i][j];			array[i][j] = array[j][i];			array[j][i] = temp;		}	}}int main() {	int s[3][3];	int i, j;	for (i = 0; i < 3; i++) {		for (j = 0; j < 3; j++) {			scanf("%d", &s[i][j]);		}	}	fun(s);	for (i = 0; i < 3; i++) {		for (j = 0; j < 3; j++) {			printf("%d ", s[i][j]);		}		printf("\n");	}	return 0;}
+#include <stdio.h>
+
+void fun(int array[3][3]) {
+	int i, j, temp;
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < i; j++) {
+			temp = array[i][j];
+			array[i][j] = array[j][i];
+			array[j][i] = temp;
+		}
+	}
+}
+
+int main() {
+	int s[3][3];
+	int i, j;
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < 3; j++) {
+			scanf("%d", &s[i][j]);
+		}
+	}
+	fun(s);
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < 3; j++) {
+			printf("%d ", s[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
 ```
 
 ## 019 从字符中删除指定的字符
@@ -379,7 +599,30 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>void fun(char s[], char c) {	int i = 0;	char *p;	p = s;	while (*p) {		if ((*p) != c) {			s[i++] = *p;		} 		p++;	}	s[i] = '\0';}int main() {	char s[100];	gets(s);	puts(s);	char c = 'a';	fun(s, c);	puts(s);	return 0;}
+#include <stdio.h>
+
+void fun(char s[], char c) {
+	int i = 0;
+	char *p;
+	p = s;
+	while (*p) {
+		if ((*p) != c) {
+			s[i++] = *p;
+		} 
+		p++;
+	}
+	s[i] = '\0';
+}
+
+int main() {
+	char s[100];
+	gets(s);
+	puts(s);
+	char c = 'a';
+	fun(s, c);
+	puts(s);
+	return 0;
+}
 ```
 
 ## 020 求出小于或等于lim的所有素数并放在aa数组中
@@ -389,7 +632,36 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>#include <math.h>#define Max 100int fun(int lim, int aa[Max]) {	int i, j, k = 0;	for (i = 2; i <= lim; i++) {		for (j = 2; j <= sqrt(i); j++) {			if (i % j == 0) {				break;			}		}		if (j > sqrt(i)) {			aa[k++] = i;		}	}	return k;}int main() {	int lim = 9;	int aa[Max];	int k = fun(lim, aa);	printf("%d\n", k);	int i; 	for (i = 0; i < k; i++) {		printf("%d ", aa[i]);	}	return 0;}
+#include <stdio.h>
+#include <math.h>
+#define Max 100
+
+int fun(int lim, int aa[Max]) {
+	int i, j, k = 0;
+	for (i = 2; i <= lim; i++) {
+		for (j = 2; j <= sqrt(i); j++) {
+			if (i % j == 0) {
+				break;
+			}
+		}
+		if (j > sqrt(i)) {
+			aa[k++] = i;
+		}
+	}
+	return k;
+}
+
+int main() {
+	int lim = 9;
+	int aa[Max];
+	int k = fun(lim, aa);
+	printf("%d\n", k);
+	int i; 
+	for (i = 0; i < k; i++) {
+		printf("%d ", aa[i]);
+	}
+	return 0;
+}
 ```
 
 ## 021 字符按ASCII码降序排列
@@ -399,7 +671,31 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>void fun(char *s, int num) {	char t;	int i, j;	for (i = 1; i < num - 2; i++) {		for (j = i + 1; j < num - 1; j++) {			if (s[i] - s[j] < '0') {				t = s[i];				s[i] = s[j];				s[j] = t;			}		}	}} int main() {	char s[7] = "HelloCC";	fun(&s, 7);	int i;	for (i = 0; i < 7; i++) {		printf("%c ", s[i]);	}	return 0;}
+#include <stdio.h>
+
+void fun(char *s, int num) {
+	char t;
+	int i, j;
+	for (i = 1; i < num - 2; i++) {
+		for (j = i + 1; j < num - 1; j++) {
+			if (s[i] - s[j] < '0') {
+				t = s[i];
+				s[i] = s[j];
+				s[j] = t;
+			}
+		}
+	}
+} 
+
+int main() {
+	char s[7] = "HelloCC";
+	fun(&s, 7);
+	int i;
+	for (i = 0; i < 7; i++) {
+		printf("%c ", s[i]);
+	}
+	return 0;
+}
 ```
 
 ## 022 带头节点的链表结构求最高分
@@ -409,7 +705,48 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>#include <stdlib.h>typedef struct student {	struct student *next;	double score;} Student;double fun(Student *h) {	double max;	Student *q = h;	max = h->score;	do {		if (q->score > max) {			max = q->score;		}		q = q->next;	} while (q);	return max;}Student *Create() {	double score;	scanf("%lf", &score);	Student *student;	if (score == -1) {		return NULL;	} else {		student = (Student *)malloc(sizeof(Student));		student->score = score;		student->next = Create();	}	return student;}int main() {	Student *h;	h = Create();	double max = fun(&h);	printf("%lf", max);	return 0;}
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct student {
+	struct student *next;
+	double score;
+} Student;
+
+double fun(Student *h) {
+	double max;
+	Student *q = h;
+	max = h->score;
+	do {
+		if (q->score > max) {
+			max = q->score;
+		}
+		q = q->next;
+	} while (q);
+	return max;
+}
+
+Student *Create() {
+	double score;
+	scanf("%lf", &score);
+	Student *student;
+	if (score == -1) {
+		return NULL;
+	} else {
+		student = (Student *)malloc(sizeof(Student));
+		student->score = score;
+		student->next = Create();
+	}
+	return student;
+}
+
+int main() {
+	Student *h;
+	h = Create();
+	double max = fun(&h);
+	printf("%lf", max);
+	return 0;
+}
 ```
 
 ## 023 判断字符串是否为回文
@@ -419,7 +756,34 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>int fun(char *str) {	int i, n = 0, flag = 1;	char *p = str;	while (*p) {		n++;		p++;	}	for (i = 0; i < n / 2; i++) {		if (str[i] != str[n - 1 - i]) {			flag = 0;			break;		}	}	return flag;}int main() {	char str[100];	gets(str);	if (fun(&str) == 1) {		printf("true"); 	} else {		printf("false");	}	return 0;}
+#include <stdio.h>
+
+int fun(char *str) {
+	int i, n = 0, flag = 1;
+	char *p = str;
+	while (*p) {
+		n++;
+		p++;
+	}
+	for (i = 0; i < n / 2; i++) {
+		if (str[i] != str[n - 1 - i]) {
+			flag = 0;
+			break;
+		}
+	}
+	return flag;
+}
+
+int main() {
+	char str[100];
+	gets(str);
+	if (fun(&str) == 1) {
+		printf("true"); 
+	} else {
+		printf("false");
+	}
+	return 0;
+}
 ```
 
 ## 024 将一个字符串转换为一个整数
@@ -429,7 +793,34 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>#include <string.h>long fun(char *p) {	long s = 0, t;	int i = 0, j, n = strlen(p), k, s1;	if (p[0] == '-') {		i++;	}	for (j = i; j < n; j++) {		t = p[j] - '0';		for (k = j; k < n - 1; k++) {			t *= 10;		}		s += t;	}	if (p[0] == '-') {		return -s;	}	return s;}int main() {	char a[100];	gets(a);	printf("%ld", fun(&a));	return 0;}
+#include <stdio.h>
+#include <string.h>
+
+long fun(char *p) {
+	long s = 0, t;
+	int i = 0, j, n = strlen(p), k, s1;
+	if (p[0] == '-') {
+		i++;
+	}
+	for (j = i; j < n; j++) {
+		t = p[j] - '0';
+		for (k = j; k < n - 1; k++) {
+			t *= 10;
+		}
+		s += t;
+	}
+	if (p[0] == '-') {
+		return -s;
+	}
+	return s;
+}
+
+int main() {
+	char a[100];
+	gets(a);
+	printf("%ld", fun(&a));
+	return 0;
+}
 ```
 
 ## 025 函数返回较长的字符串
@@ -439,7 +830,39 @@ int main() {
 【代码】
 
 ```c
-#include <stdio.h>char *fun(char *s, char *t) {	char *p, *s1 = s, *t1 = t;	int n = 0, m = 0;	while (*s1) {		n++;		s1++;	}	while (*t1) {		m++;		t1++;	}	if (n >= m) {		p = s;	} else {		p = t;	}	//puts(p);	return p;}int main() {	char a[100];	gets(a);	char b[100];	gets(b);	char *c;		c = fun(a, b);	puts(c);		return 0;}
+#include <stdio.h>
+
+char *fun(char *s, char *t) {
+	char *p, *s1 = s, *t1 = t;
+	int n = 0, m = 0;
+	while (*s1) {
+		n++;
+		s1++;
+	}
+	while (*t1) {
+		m++;
+		t1++;
+	}
+	if (n >= m) {
+		p = s;
+	} else {
+		p = t;
+	}
+	//puts(p);
+	return p;
+}
+
+int main() {
+	char a[100];
+	gets(a);
+	char b[100];
+	gets(b);
+	char *c;	
+	c = fun(a, b);
+	puts(c);
+	
+	return 0;
+}
 ```
 
 ## 026 根据公式求值
@@ -453,7 +876,23 @@ X/2=1+1/3+1×2/3×5+1×2×3/3×5×7+1×2×3×4/3×5×7×9+...+1×2×3×...×n/3�
 【代码】
 
 ```c
-#include <stdio.h>double fun(double eps) {	double s = 1.0, n = 1.0, x = 0;	while (fabs(s) >= eps) {		x += s;		s *= n / (2 * n + 1);		n++;	}	x = x * 2;	return x;}int main() {	printf("%lf", fun(0.0005));	return 0;}
+#include <stdio.h>
+
+double fun(double eps) {
+	double s = 1.0, n = 1.0, x = 0;
+	while (fabs(s) >= eps) {
+		x += s;
+		s *= n / (2 * n + 1);
+		n++;
+	}
+	x = x * 2;
+	return x;
+}
+
+int main() {
+	printf("%lf", fun(0.0005));
+	return 0;
+}
 ```
 
 ## 027 整数放在数组a中，返回数的个数
@@ -463,7 +902,28 @@ X/2=1+1/3+1×2/3×5+1×2×3/3×5×7+1×2×3×4/3×5×7×9+...+1×2×3×...×n/3�
 【代码】
 
 ```c
-#include <stdio.h>void fun(int m, int *a, int *n) {	int i, j = 0;	*n = 0;	for (i = 1; i <= m; i++) {		if (i % 7 == 0 || i % 11 == 0) {			a[j] = i;			j++;		}	}	*n = j;}int main() {	int a[100];	int m = 12;	int n;	fun(m, a, &n);	printf("%d", n);	return 0;}
+#include <stdio.h>
+
+void fun(int m, int *a, int *n) {
+	int i, j = 0;
+	*n = 0;
+	for (i = 1; i <= m; i++) {
+		if (i % 7 == 0 || i % 11 == 0) {
+			a[j] = i;
+			j++;
+		}
+	}
+	*n = j;
+}
+
+int main() {
+	int a[100];
+	int m = 12;
+	int n;
+	fun(m, a, &n);
+	printf("%d", n);
+	return 0;
+}
 ```
 
 
@@ -475,7 +935,27 @@ X/2=1+1/3+1×2/3×5+1×2×3/3×5×7+1×2×3×4/3×5×7×9+...+1×2×3×...×n/3�
 【代码】
 
 ```c
-#include <stdio.h>void fun(int a[], int n, int *max, int *index) {	int i;	*max = a[0];	*index = 0;	for (i = 0; i < n; i++) {		if (a[i] > *max) {			*max = a[i];			*index = i;		}	}	}int main() {	int a[] = {1,2,5,4};	int max, index;	fun(a, 4, &max, &index);	printf("a[%d] = %d", index, max);	return 0;}
+#include <stdio.h>
+
+void fun(int a[], int n, int *max, int *index) {
+	int i;
+	*max = a[0];
+	*index = 0;
+	for (i = 0; i < n; i++) {
+		if (a[i] > *max) {
+			*max = a[i];
+			*index = i;
+		}
+	}	
+}
+
+int main() {
+	int a[] = {1,2,5,4};
+	int max, index;
+	fun(a, 4, &max, &index);
+	printf("a[%d] = %d", index, max);
+	return 0;
+}
 ```
 
 ## 029 字符串换字母
@@ -485,7 +965,28 @@ X/2=1+1/3+1×2/3×5+1×2×3/3×5×7+1×2×3×4/3×5×7×9+...+1×2×3×...×n/3�
 【代码】
 
 ```c
-#include <stdio.h>#include <string.h>void fun(char *ss) {	int i, n = strlen(ss);	for (i = 0; i < n; i++) {		if (i % 2 != 0) {			if (ss[i] >= 'a' && ss[i] <= 'z') {				ss[i] -= 32;			}		}			}}int main() {	char a[100];	gets(a);	fun(a);	puts(a);	return 0;}
+#include <stdio.h>
+#include <string.h>
+
+void fun(char *ss) {
+	int i, n = strlen(ss);
+	for (i = 0; i < n; i++) {
+		if (i % 2 != 0) {
+			if (ss[i] >= 'a' && ss[i] <= 'z') {
+				ss[i] -= 32;
+			}
+		}
+		
+	}
+}
+
+int main() {
+	char a[100];
+	gets(a);
+	fun(a);
+	puts(a);
+	return 0;
+}
 ```
 
 
@@ -497,7 +998,34 @@ X/2=1+1/3+1×2/3×5+1×2×3/3×5×7+1×2×3×4/3×5×7×9+...+1×2×3×...×n/3�
 【代码】
 
 ```c
-#include <stdio.h>#define M 2int fun(int a[][M]) {	int i, j, max = a[0][0];	for (i = 0; i < 2; i++) {		for (j = 0; j < M; j++) {			if (a[i][j] >max) {				max = a[i][j];			}		}	}	return max;}int main() {	int a[2][M];	int i, j;	for (i = 0; i < 2; i++) {		for (j = 0; j < M; j++) {			scanf("%d", &a[i][j]);		}	}	int max = fun(a);	printf("%d", max);		return 0;}
+#include <stdio.h>
+#define M 2
+
+int fun(int a[][M]) {
+	int i, j, max = a[0][0];
+	for (i = 0; i < 2; i++) {
+		for (j = 0; j < M; j++) {
+			if (a[i][j] >max) {
+				max = a[i][j];
+			}
+		}
+	}
+	return max;
+}
+
+int main() {
+	int a[2][M];
+	int i, j;
+	for (i = 0; i < 2; i++) {
+		for (j = 0; j < M; j++) {
+			scanf("%d", &a[i][j]);
+		}
+	}
+	int max = fun(a);
+	printf("%d", max);
+	
+	return 0;
+}
 ```
 
 
@@ -509,7 +1037,27 @@ X/2=1+1/3+1×2/3×5+1×2×3/3×5×7+1×2×3×4/3×5×7×9+...+1×2×3×...×n/3�
 【代码】
 
 ```c
-#include <stdio.h>#include <string.h> void fun(char *s, char t[]) {	int i, j = 0, n = strlen(s);	for (i = 0; i < n; i++) {		if (i % 2 == 0 && s[i] % 2 == 0) {			t[j++] = s[i];		}	}	t[j] = '\0';} //测试int main() {	char s[100];	char t[100];	gets(s);	fun(s, t);	puts(t);	return 0;}
+#include <stdio.h>
+#include <string.h> 
+
+void fun(char *s, char t[]) {
+	int i, j = 0, n = strlen(s);
+	for (i = 0; i < n; i++) {
+		if (i % 2 == 0 && s[i] % 2 == 0) {
+			t[j++] = s[i];
+		}
+	}
+	t[j] = '\0';
+} 
+//测试
+int main() {
+	char s[100];
+	char t[100];
+	gets(s);
+	fun(s, t);
+	puts(t);
+	return 0;
+}
 ```
 
 ## 032 查找字符并删除
@@ -519,7 +1067,27 @@ X/2=1+1/3+1×2/3×5+1×2×3/3×5×7+1×2×3×4/3×5×7×9+...+1×2×3×...×n/3�
 【代码】
 
 ```c
-#include <stdio.h>#include <string.h> void fun(char *s, char t[]) {	int i, j = 0, n = strlen(s);	for (i = 0; i < n; i++) {		if (i % 2 != 0 && s[i] % 2 != 0) {			t[j++] = s[i];		}	}	t[j] = '\0';} int main() {	char s[100];	char t[100];	gets(s);	fun(s, t);	puts(t);	return 0;}
+#include <stdio.h>
+#include <string.h> 
+
+void fun(char *s, char t[]) {
+	int i, j = 0, n = strlen(s);
+	for (i = 0; i < n; i++) {
+		if (i % 2 != 0 && s[i] % 2 != 0) {
+			t[j++] = s[i];
+		}
+	}
+	t[j] = '\0';
+} 
+
+int main() {
+	char s[100];
+	char t[100];
+	gets(s);
+	fun(s, t);
+	puts(t);
+	return 0;
+}
 ```
 
 ## 033 将字符串中的前导 * 号全部删除
@@ -529,7 +1097,24 @@ X/2=1+1/3+1×2/3×5+1×2×3/3×5×7+1×2×3×4/3×5×7×9+...+1×2×3×...×n/3�
 【代码】
 
 ```c
-#include <stdio.h>#include <string.h> void fun(char *a) {	char *p=a;	while (*p== '*') {		p++;	}	strcpy (a,p);} int main() {	char a[100];	gets(a);	fun(a);	puts(a);	return 0;}
+#include <stdio.h>
+#include <string.h> 
+
+void fun(char *a) {
+	char *p=a;
+	while (*p== '*') {
+		p++;
+	}
+	strcpy (a,p);
+} 
+
+int main() {
+	char a[100];
+	gets(a);
+	fun(a);
+	puts(a);
+	return 0;
+}
 ```
 
 
@@ -541,7 +1126,48 @@ X/2=1+1/3+1×2/3×5+1×2×3/3×5×7+1×2×3×4/3×5×7×9+...+1×2×3×...×n/3�
 【代码】
 
 ```c
-#include <stdio.h>#include <stdlib.h>#define N 3typedef struct student {	int id;	double score;} Student;int fun(Student s[], Student t[] ) {	double max;	int i, j = 0;	max = s[0].score;	for (i = 1; i < N; i++) {		if (s[i].score > max) {			max = s[i].score;		}	}	for (i = 0; i < N; i++) {		if (s[i].score == max) {			t[j].score = s[i].score;			t[j].id = s[i].id;			j++;		}    }	return j;}int main() {	Student s[N];	double score;	int id;	int i;	for (i = 0; i < N; i++) {			scanf("%d %lf", &id, &score);		s[i].score = score;		s[i].id = id;	}	Student t[100];	printf("%d", fun(s, t));	return 0;}
+#include <stdio.h>
+#include <stdlib.h>
+#define N 3
+
+typedef struct student {
+	int id;
+	double score;
+} Student;
+
+int fun(Student s[], Student t[] ) {
+	double max;
+	int i, j = 0;
+	max = s[0].score;
+	for (i = 1; i < N; i++) {
+		if (s[i].score > max) {
+			max = s[i].score;
+		}
+	}
+	for (i = 0; i < N; i++) {
+		if (s[i].score == max) {
+			t[j].score = s[i].score;
+			t[j].id = s[i].id;
+			j++;
+		}
+    }
+	return j;
+}
+
+int main() {
+	Student s[N];
+	double score;
+	int id;
+	int i;
+	for (i = 0; i < N; i++) {	
+		scanf("%d %lf", &id, &score);
+		s[i].score = score;
+		s[i].id = id;
+	}
+	Student t[100];
+	printf("%d", fun(s, t));
+	return 0;
+}
 ```
 
 
@@ -553,7 +1179,27 @@ X/2=1+1/3+1×2/3×5+1×2×3/3×5×7+1×2×3×4/3×5×7×9+...+1×2×3×...×n/3�
 【代码】
 
 ```c
-#include <stdio.h>void fun(char *str) {	int i = 0;	char *p = str;	while (*p) {		if (*p != ' ') {			str[i++] = *p;		}		p++;	}	str[i] = '\0';}int main() {	char a[100];	gets(a);	fun(a);	puts(a);	return 0;}
+#include <stdio.h>
+
+void fun(char *str) {
+	int i = 0;
+	char *p = str;
+	while (*p) {
+		if (*p != ' ') {
+			str[i++] = *p;
+		}
+		p++;
+	}
+	str[i] = '\0';
+}
+
+int main() {
+	char a[100];
+	gets(a);
+	fun(a);
+	puts(a);
+	return 0;
+}
 ```
 
 ## 036 将字符串中的前导 * 号全部移到字符串的尾部。
@@ -579,7 +1225,26 @@ X/2=1+1/3+1×2/3×5+1×2×3/3×5×7+1×2×3×4/3×5×7×9+...+1×2×3×...×n/3�
 【代码】
 
 ```c
-#include <stdio.h>int fun(char *a, char c) {	int n = 0;	while (*a) {		if (*a == c) {			n++;		}		a++;	}	return n;}int main() {	char a[100];	gets(a);	int num = fun(a, 'c');	printf("%d", num);	return 0;}
+#include <stdio.h>
+
+int fun(char *a, char c) {
+	int n = 0;
+	while (*a) {
+		if (*a == c) {
+			n++;
+		}
+		a++;
+	}
+	return n;
+}
+
+int main() {
+	char a[100];
+	gets(a);
+	int num = fun(a, 'c');
+	printf("%d", num);
+	return 0;
+}
 ```
 
 ## 039 移动一维数组中的内容
@@ -597,7 +1262,34 @@ X/2=1+1/3+1×2/3×5+1×2×3/3×5×7+1×2×3×4/3×5×7×9+...+1×2×3×...×n/3�
 【代码】
 
 ```c
-#include <stdio.h>#include <string.h>#define N 100void fun(char *w, int m) {	char b[N];	int n = strlen(w);	int i, j = 0;	for (i = 0; i < m; i++) {		b[j] = w[i];		j++;	}	for (i = 0; i < n - m; i++) {		w[i] = w[i + m];	}	for (j = 0; j < m; j++) {		w[i++] = b[j];	}	w[i] = '\0';}int main() {	char a[N];	gets(a);	fun(a, 3);	puts(a);	return 0;}
+#include <stdio.h>
+#include <string.h>
+#define N 100
+
+void fun(char *w, int m) {
+	char b[N];
+	int n = strlen(w);
+	int i, j = 0;
+	for (i = 0; i < m; i++) {
+		b[j] = w[i];
+		j++;
+	}
+	for (i = 0; i < n - m; i++) {
+		w[i] = w[i + m];
+	}
+	for (j = 0; j < m; j++) {
+		w[i++] = b[j];
+	}
+	w[i] = '\0';
+}
+
+int main() {
+	char a[N];
+	gets(a);
+	fun(a, 3);
+	puts(a);
+	return 0;
+}
 ```
 
 
@@ -737,7 +1429,26 @@ s=1+x+x(2)/2!+x(3)/3!+...x(n)/n!
 【代码】
 
 ```c
-#include <stdio.h> #include <math.h>double fun(double a[9]) {	int i, j = 1;	double s = 0.0;	for (i = 0; i < 9; i++) {		if (j <= 8) {			s += sqrt((a[i] + a[i + 1]) / 2);			j++;		}	}	return s;}int main() {	double a[9] = {1,1,1,1,1,1,1,1,1};	printf("%lf\n", fun(a));	return 0;}
+#include <stdio.h> 
+#include <math.h>
+
+double fun(double a[9]) {
+	int i, j = 1;
+	double s = 0.0;
+	for (i = 0; i < 9; i++) {
+		if (j <= 8) {
+			s += sqrt((a[i] + a[i + 1]) / 2);
+			j++;
+		}
+	}
+	return s;
+}
+
+int main() {
+	double a[9] = {1,1,1,1,1,1,1,1,1};
+	printf("%lf\n", fun(a));
+	return 0;
+}
 ```
 
 
@@ -749,7 +1460,25 @@ s=1+x+x(2)/2!+x(3)/3!+...x(n)/n!
 【代码】
 
 ```c
-#include <stdio.h> double fun(int n) {	int i, j, t;	double s = 0.0;	for (i = 1; i <= n; i++) {		t = 0;		for (j = 1; j <= i; j++) {			t += j;		}		s += 1.0/t;	}	return s;}int main() {	printf("%lf\n", fun(10));	return 0;}
+#include <stdio.h> 
+
+double fun(int n) {
+	int i, j, t;
+	double s = 0.0;
+	for (i = 1; i <= n; i++) {
+		t = 0;
+		for (j = 1; j <= i; j++) {
+			t += j;
+		}
+		s += 1.0/t;
+	}
+	return s;
+}
+
+int main() {
+	printf("%lf\n", fun(10));
+	return 0;
+}
 ```
 
 
@@ -761,7 +1490,24 @@ s=1+x+x(2)/2!+x(3)/3!+...x(n)/n!
 【代码】
 
 ```c
-#include <stdio.h> #include <math.h>double fun(int n) {	int i;	double s = 0.0;	for (i = 1; i <= n; i++) {		if (i % 5 == 0 || i % 9 == 0) {			s += 1.0 / i;		}	}	return s;}int main() {	printf("%lf\n", fun(10));	return 0;}
+#include <stdio.h> 
+#include <math.h>
+
+double fun(int n) {
+	int i;
+	double s = 0.0;
+	for (i = 1; i <= n; i++) {
+		if (i % 5 == 0 || i % 9 == 0) {
+			s += 1.0 / i;
+		}
+	}
+	return s;
+}
+
+int main() {
+	printf("%lf\n", fun(10));
+	return 0;
+}
 ```
 
 
@@ -773,7 +1519,29 @@ s=1+x+x(2)/2!+x(3)/3!+...x(n)/n!
 【代码】
 
 ```c
-#include <stdio.h> #include <math.h>double fun(int n) {	int i, j;	double s = 0.0;	for (i = 3; i <= n; i++) {		for (j = 2; j <= sqrt(i); j++) {			if (i % j == 0) {				break;			} 		}		if (j > sqrt(i) ) {			s += sqrt(i);		}	}	return s;}int main() {	printf("%lf\n", fun(5));	return 0;}
+#include <stdio.h> 
+#include <math.h>
+
+double fun(int n) {
+	int i, j;
+	double s = 0.0;
+	for (i = 3; i <= n; i++) {
+		for (j = 2; j <= sqrt(i); j++) {
+			if (i % j == 0) {
+				break;
+			} 
+		}
+		if (j > sqrt(i) ) {
+			s += sqrt(i);
+		}
+	}
+	return s;
+}
+
+int main() {
+	printf("%lf\n", fun(5));
+	return 0;
+}
 ```
 
 
@@ -785,7 +1553,23 @@ s=1+x+x(2)/2!+x(3)/3!+...x(n)/n!
 【代码】
 
 ```c
-#include <stdio.h> #include <math.h>double fun(int n) {	int i;	double s = 1.0, p = 1.0;	for (i = 2; i <= n; i++) {		p += pow(i, 0.5);		s += p;	}	return s;}int main() {	printf("%lf\n", fun(2));	return 0;}
+#include <stdio.h> 
+#include <math.h>
+
+double fun(int n) {
+	int i;
+	double s = 1.0, p = 1.0;
+	for (i = 2; i <= n; i++) {
+		p += pow(i, 0.5);
+		s += p;
+	}
+	return s;
+}
+
+int main() {
+	printf("%lf\n", fun(2));
+	return 0;
+}
 ```
 
 

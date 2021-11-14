@@ -164,6 +164,8 @@
 
 ## 🧚‍♀️3 数据结构与算法
 
+[南开大学C语言100题算法练习](C语言突击/南开100题算法练习/Readme.md)
+
 [62图给你讲Docker](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453506139&idx=1&sn=66a1570a92fccfee39d56f941191cb50&chksm=8c98fe28bbef773ebf862f8791ce33f5fe2647814ecb3d444e30291e4950ed3efae3ee52c918&token=1639104751&lang=zh_CN#rd)
 
 ## 🧜‍♀️4 数据库
