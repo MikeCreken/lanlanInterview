@@ -3,7 +3,6 @@
 # 欢迎来到蓝蓝的博客
 
 - 公众号：暖蓝笔记
-- B站:   暖蓝笔记
 
 <img width="180px" style="border-radius: 50%" bor src="">
 
