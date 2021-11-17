@@ -1,0 +1,847 @@
+﻿<!DOCTYPE html>
+<html>
+<head>  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,user-scalable=0">
+  <meta name="author" content="微信公众号：颜家大少">
+  <meta name="email" content="3056432@qq.com">
+  <meta name="description" content="一个Markdown在线转换工具，让Markdown内容，不需作任何调整就能同时在微信公众号、博客园、掘金、csdn等平台正确显示当前预览的效果">
+  <title>Md2All export document</title>  
+  <style type="text/css" id="markdown_preview_css"> 
+ .output_wrapper pre code{font-family: Consolas, Inconsolata, Courier, monospace; display: block !important; white-space: pre !important; word-wrap: normal !important; word-break: normal !important;  overflow: auto !important;}  
+.output_wrapper a:hover { text-decoration: underline; color: rgb(0, 96, 100); }
+.output_wrapper figcaption { margin-top: 10px; text-align: center; color: rgb(153, 153, 153); font-size: 0.7em; }
+.output_wrapper pre code .linenum { padding-right: 20px; word-spacing: 0px; }
+.task-list-list { list-style-type: none; }
+.task-list-list.checked { color: rgb(62, 62, 62); }
+.task-list-list.uncheck { color: rgb(191, 193, 191); }
+.task-list-list .icon_uncheck, .task-list-list .icon_check { display: inline-block; vertical-align: middle; margin-right: 10px; }
+.task-list-list .icon_check::before { content: "√"; border: 2px solid rgb(62, 62, 62); color: red; }
+.task-list-list .icon_uncheck::before { content: "x"; border: 2px solid rgb(191, 193, 191); color: rgb(191, 193, 191); }
+.task-list-list .icon_check::before, .task-list-list .icon_uncheck::before { padding: 2px 8px 2px 5px; border-radius: 5px; }
+@font-face { font-family: KaTeX_AMS; src: url("fonts/KaTeX_AMS-Regular.woff2") format("woff2"), url("fonts/KaTeX_AMS-Regular.woff") format("woff"), url("fonts/KaTeX_AMS-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: KaTeX_Caligraphic; src: url("fonts/KaTeX_Caligraphic-Bold.woff2") format("woff2"), url("fonts/KaTeX_Caligraphic-Bold.woff") format("woff"), url("fonts/KaTeX_Caligraphic-Bold.ttf") format("truetype"); font-weight: bold; font-style: normal; }
+@font-face { font-family: KaTeX_Caligraphic; src: url("fonts/KaTeX_Caligraphic-Regular.woff2") format("woff2"), url("fonts/KaTeX_Caligraphic-Regular.woff") format("woff"), url("fonts/KaTeX_Caligraphic-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: KaTeX_Fraktur; src: url("fonts/KaTeX_Fraktur-Bold.woff2") format("woff2"), url("fonts/KaTeX_Fraktur-Bold.woff") format("woff"), url("fonts/KaTeX_Fraktur-Bold.ttf") format("truetype"); font-weight: bold; font-style: normal; }
+@font-face { font-family: KaTeX_Fraktur; src: url("fonts/KaTeX_Fraktur-Regular.woff2") format("woff2"), url("fonts/KaTeX_Fraktur-Regular.woff") format("woff"), url("fonts/KaTeX_Fraktur-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: KaTeX_Main; src: url("fonts/KaTeX_Main-Bold.woff2") format("woff2"), url("fonts/KaTeX_Main-Bold.woff") format("woff"), url("fonts/KaTeX_Main-Bold.ttf") format("truetype"); font-weight: bold; font-style: normal; }
+@font-face { font-family: KaTeX_Main; src: url("fonts/KaTeX_Main-BoldItalic.woff2") format("woff2"), url("fonts/KaTeX_Main-BoldItalic.woff") format("woff"), url("fonts/KaTeX_Main-BoldItalic.ttf") format("truetype"); font-weight: bold; font-style: italic; }
+@font-face { font-family: KaTeX_Main; src: url("fonts/KaTeX_Main-Italic.woff2") format("woff2"), url("fonts/KaTeX_Main-Italic.woff") format("woff"), url("fonts/KaTeX_Main-Italic.ttf") format("truetype"); font-weight: normal; font-style: italic; }
+@font-face { font-family: KaTeX_Main; src: url("fonts/KaTeX_Main-Regular.woff2") format("woff2"), url("fonts/KaTeX_Main-Regular.woff") format("woff"), url("fonts/KaTeX_Main-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: KaTeX_Math; src: url("fonts/KaTeX_Math-BoldItalic.woff2") format("woff2"), url("fonts/KaTeX_Math-BoldItalic.woff") format("woff"), url("fonts/KaTeX_Math-BoldItalic.ttf") format("truetype"); font-weight: bold; font-style: italic; }
+@font-face { font-family: KaTeX_Math; src: url("fonts/KaTeX_Math-Italic.woff2") format("woff2"), url("fonts/KaTeX_Math-Italic.woff") format("woff"), url("fonts/KaTeX_Math-Italic.ttf") format("truetype"); font-weight: normal; font-style: italic; }
+@font-face { font-family: KaTeX_SansSerif; src: url("fonts/KaTeX_SansSerif-Bold.woff2") format("woff2"), url("fonts/KaTeX_SansSerif-Bold.woff") format("woff"), url("fonts/KaTeX_SansSerif-Bold.ttf") format("truetype"); font-weight: bold; font-style: normal; }
+@font-face { font-family: KaTeX_SansSerif; src: url("fonts/KaTeX_SansSerif-Italic.woff2") format("woff2"), url("fonts/KaTeX_SansSerif-Italic.woff") format("woff"), url("fonts/KaTeX_SansSerif-Italic.ttf") format("truetype"); font-weight: normal; font-style: italic; }
+@font-face { font-family: KaTeX_SansSerif; src: url("fonts/KaTeX_SansSerif-Regular.woff2") format("woff2"), url("fonts/KaTeX_SansSerif-Regular.woff") format("woff"), url("fonts/KaTeX_SansSerif-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: KaTeX_Script; src: url("fonts/KaTeX_Script-Regular.woff2") format("woff2"), url("fonts/KaTeX_Script-Regular.woff") format("woff"), url("fonts/KaTeX_Script-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: KaTeX_Size1; src: url("fonts/KaTeX_Size1-Regular.woff2") format("woff2"), url("fonts/KaTeX_Size1-Regular.woff") format("woff"), url("fonts/KaTeX_Size1-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: KaTeX_Size2; src: url("fonts/KaTeX_Size2-Regular.woff2") format("woff2"), url("fonts/KaTeX_Size2-Regular.woff") format("woff"), url("fonts/KaTeX_Size2-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: KaTeX_Size3; src: url("fonts/KaTeX_Size3-Regular.woff2") format("woff2"), url("fonts/KaTeX_Size3-Regular.woff") format("woff"), url("fonts/KaTeX_Size3-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: KaTeX_Size4; src: url("fonts/KaTeX_Size4-Regular.woff2") format("woff2"), url("fonts/KaTeX_Size4-Regular.woff") format("woff"), url("fonts/KaTeX_Size4-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: KaTeX_Typewriter; src: url("fonts/KaTeX_Typewriter-Regular.woff2") format("woff2"), url("fonts/KaTeX_Typewriter-Regular.woff") format("woff"), url("fonts/KaTeX_Typewriter-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@media screen {
+  .katex .mtable .vertical-separator { min-width: 1px; }
+  .katex .mfrac .frac-line, .katex .overline .overline-line, .katex .underline .underline-line, .katex .hline, .katex .hdashline, .katex .rule { min-height: 1px; }
+}
+.katex-display { display: block; margin: 1em 0px; text-align: center; }
+.katex-display > .katex { display: block; text-align: center; white-space: nowrap; }
+.katex-display > .katex > .katex-html { display: block; }
+.katex-display > .katex > .katex-html > .tag { position: absolute; right: 0px; }
+.katex { font: 1.21em / 1.2 KaTeX_Main, "Times New Roman", serif; text-indent: 0px; text-rendering: auto; }
+.katex * { }
+.katex .katex-mathml { position: absolute; clip: rect(1px, 1px, 1px, 1px); padding: 0px; border: 0px; height: 1px; width: 1px; overflow: hidden; }
+.katex .katex-html { }
+.katex .katex-html > .newline { display: block; }
+.katex .base { position: relative; display: inline-block; white-space: nowrap; width: min-content; }
+.katex .strut { display: inline-block; }
+.katex .textbf { font-weight: bold; }
+.katex .textit { font-style: italic; }
+.katex .textrm { font-family: KaTeX_Main; }
+.katex .textsf { font-family: KaTeX_SansSerif; }
+.katex .texttt { font-family: KaTeX_Typewriter; }
+.katex .mathit { font-family: KaTeX_Math; font-style: italic; }
+.katex .mathrm { font-style: normal; }
+.katex .mathbf { font-family: KaTeX_Main; font-weight: bold; }
+.katex .boldsymbol { font-family: KaTeX_Math; font-weight: bold; font-style: italic; }
+.katex .amsrm { font-family: KaTeX_AMS; }
+.katex .mathbb, .katex .textbb { font-family: KaTeX_AMS; }
+.katex .mathcal { font-family: KaTeX_Caligraphic; }
+.katex .mathfrak, .katex .textfrak { font-family: KaTeX_Fraktur; }
+.katex .mathtt { font-family: KaTeX_Typewriter; }
+.katex .mathscr, .katex .textscr { font-family: KaTeX_Script; }
+.katex .mathsf, .katex .textsf { font-family: KaTeX_SansSerif; }
+.katex .mainit { font-family: KaTeX_Main; font-style: italic; }
+.katex .mainrm { font-family: KaTeX_Main; font-style: normal; }
+.katex .vlist-t { display: inline-table; table-layout: fixed; }
+.katex .vlist-r { display: table-row; }
+.katex .vlist { display: table-cell; vertical-align: bottom; position: relative; }
+.katex .vlist > span { display: block; height: 0px; position: relative; }
+.katex .vlist > span > span { display: inline-block; }
+.katex .vlist > span > .pstrut { overflow: hidden; width: 0px; }
+.katex .vlist-t2 { margin-right: -2px; }
+.katex .vlist-s { display: table-cell; vertical-align: bottom; font-size: 1px; width: 2px; min-width: 2px; }
+.katex .msupsub { text-align: left; }
+.katex .mfrac > span > span { text-align: center; }
+.katex .mfrac .frac-line { display: inline-block; width: 100%; border-bottom-style: solid; }
+.katex .mspace { display: inline-block; }
+.katex .llap, .katex .rlap, .katex .clap { width: 0px; position: relative; }
+.katex .llap > .inner, .katex .rlap > .inner, .katex .clap > .inner { position: absolute; }
+.katex .llap > .fix, .katex .rlap > .fix, .katex .clap > .fix { display: inline-block; }
+.katex .llap > .inner { right: 0px; }
+.katex .rlap > .inner, .katex .clap > .inner { left: 0px; }
+.katex .clap > .inner > span { margin-left: -50%; margin-right: 50%; }
+.katex .rule { display: inline-block; border: 0px solid; position: relative; }
+.katex .overline .overline-line, .katex .underline .underline-line, .katex .hline { display: inline-block; width: 100%; border-bottom-style: solid; }
+.katex .hdashline { display: inline-block; width: 100%; border-bottom-style: dashed; }
+.katex .sqrt > .root { margin-left: 0.277778em; margin-right: -0.555556em; }
+.katex .sizing, .katex .fontsize-ensurer { display: inline-block; }
+.katex .sizing.reset-size1.size1, .katex .fontsize-ensurer.reset-size1.size1 { font-size: 1em; }
+.katex .sizing.reset-size1.size2, .katex .fontsize-ensurer.reset-size1.size2 { font-size: 1.2em; }
+.katex .sizing.reset-size1.size3, .katex .fontsize-ensurer.reset-size1.size3 { font-size: 1.4em; }
+.katex .sizing.reset-size1.size4, .katex .fontsize-ensurer.reset-size1.size4 { font-size: 1.6em; }
+.katex .sizing.reset-size1.size5, .katex .fontsize-ensurer.reset-size1.size5 { font-size: 1.8em; }
+.katex .sizing.reset-size1.size6, .katex .fontsize-ensurer.reset-size1.size6 { font-size: 2em; }
+.katex .sizing.reset-size1.size7, .katex .fontsize-ensurer.reset-size1.size7 { font-size: 2.4em; }
+.katex .sizing.reset-size1.size8, .katex .fontsize-ensurer.reset-size1.size8 { font-size: 2.88em; }
+.katex .sizing.reset-size1.size9, .katex .fontsize-ensurer.reset-size1.size9 { font-size: 3.456em; }
+.katex .sizing.reset-size1.size10, .katex .fontsize-ensurer.reset-size1.size10 { font-size: 4.148em; }
+.katex .sizing.reset-size1.size11, .katex .fontsize-ensurer.reset-size1.size11 { font-size: 4.976em; }
+.katex .sizing.reset-size2.size1, .katex .fontsize-ensurer.reset-size2.size1 { font-size: 0.833333em; }
+.katex .sizing.reset-size2.size2, .katex .fontsize-ensurer.reset-size2.size2 { font-size: 1em; }
+.katex .sizing.reset-size2.size3, .katex .fontsize-ensurer.reset-size2.size3 { font-size: 1.16667em; }
+.katex .sizing.reset-size2.size4, .katex .fontsize-ensurer.reset-size2.size4 { font-size: 1.33333em; }
+.katex .sizing.reset-size2.size5, .katex .fontsize-ensurer.reset-size2.size5 { font-size: 1.5em; }
+.katex .sizing.reset-size2.size6, .katex .fontsize-ensurer.reset-size2.size6 { font-size: 1.66667em; }
+.katex .sizing.reset-size2.size7, .katex .fontsize-ensurer.reset-size2.size7 { font-size: 2em; }
+.katex .sizing.reset-size2.size8, .katex .fontsize-ensurer.reset-size2.size8 { font-size: 2.4em; }
+.katex .sizing.reset-size2.size9, .katex .fontsize-ensurer.reset-size2.size9 { font-size: 2.88em; }
+.katex .sizing.reset-size2.size10, .katex .fontsize-ensurer.reset-size2.size10 { font-size: 3.45667em; }
+.katex .sizing.reset-size2.size11, .katex .fontsize-ensurer.reset-size2.size11 { font-size: 4.14667em; }
+.katex .sizing.reset-size3.size1, .katex .fontsize-ensurer.reset-size3.size1 { font-size: 0.714286em; }
+.katex .sizing.reset-size3.size2, .katex .fontsize-ensurer.reset-size3.size2 { font-size: 0.857143em; }
+.katex .sizing.reset-size3.size3, .katex .fontsize-ensurer.reset-size3.size3 { font-size: 1em; }
+.katex .sizing.reset-size3.size4, .katex .fontsize-ensurer.reset-size3.size4 { font-size: 1.14286em; }
+.katex .sizing.reset-size3.size5, .katex .fontsize-ensurer.reset-size3.size5 { font-size: 1.28571em; }
+.katex .sizing.reset-size3.size6, .katex .fontsize-ensurer.reset-size3.size6 { font-size: 1.42857em; }
+.katex .sizing.reset-size3.size7, .katex .fontsize-ensurer.reset-size3.size7 { font-size: 1.71429em; }
+.katex .sizing.reset-size3.size8, .katex .fontsize-ensurer.reset-size3.size8 { font-size: 2.05714em; }
+.katex .sizing.reset-size3.size9, .katex .fontsize-ensurer.reset-size3.size9 { font-size: 2.46857em; }
+.katex .sizing.reset-size3.size10, .katex .fontsize-ensurer.reset-size3.size10 { font-size: 2.96286em; }
+.katex .sizing.reset-size3.size11, .katex .fontsize-ensurer.reset-size3.size11 { font-size: 3.55429em; }
+.katex .sizing.reset-size4.size1, .katex .fontsize-ensurer.reset-size4.size1 { font-size: 0.625em; }
+.katex .sizing.reset-size4.size2, .katex .fontsize-ensurer.reset-size4.size2 { font-size: 0.75em; }
+.katex .sizing.reset-size4.size3, .katex .fontsize-ensurer.reset-size4.size3 { font-size: 0.875em; }
+.katex .sizing.reset-size4.size4, .katex .fontsize-ensurer.reset-size4.size4 { font-size: 1em; }
+.katex .sizing.reset-size4.size5, .katex .fontsize-ensurer.reset-size4.size5 { font-size: 1.125em; }
+.katex .sizing.reset-size4.size6, .katex .fontsize-ensurer.reset-size4.size6 { font-size: 1.25em; }
+.katex .sizing.reset-size4.size7, .katex .fontsize-ensurer.reset-size4.size7 { font-size: 1.5em; }
+.katex .sizing.reset-size4.size8, .katex .fontsize-ensurer.reset-size4.size8 { font-size: 1.8em; }
+.katex .sizing.reset-size4.size9, .katex .fontsize-ensurer.reset-size4.size9 { font-size: 2.16em; }
+.katex .sizing.reset-size4.size10, .katex .fontsize-ensurer.reset-size4.size10 { font-size: 2.5925em; }
+.katex .sizing.reset-size4.size11, .katex .fontsize-ensurer.reset-size4.size11 { font-size: 3.11em; }
+.katex .sizing.reset-size5.size1, .katex .fontsize-ensurer.reset-size5.size1 { font-size: 0.555556em; }
+.katex .sizing.reset-size5.size2, .katex .fontsize-ensurer.reset-size5.size2 { font-size: 0.666667em; }
+.katex .sizing.reset-size5.size3, .katex .fontsize-ensurer.reset-size5.size3 { font-size: 0.777778em; }
+.katex .sizing.reset-size5.size4, .katex .fontsize-ensurer.reset-size5.size4 { font-size: 0.888889em; }
+.katex .sizing.reset-size5.size5, .katex .fontsize-ensurer.reset-size5.size5 { font-size: 1em; }
+.katex .sizing.reset-size5.size6, .katex .fontsize-ensurer.reset-size5.size6 { font-size: 1.11111em; }
+.katex .sizing.reset-size5.size7, .katex .fontsize-ensurer.reset-size5.size7 { font-size: 1.33333em; }
+.katex .sizing.reset-size5.size8, .katex .fontsize-ensurer.reset-size5.size8 { font-size: 1.6em; }
+.katex .sizing.reset-size5.size9, .katex .fontsize-ensurer.reset-size5.size9 { font-size: 1.92em; }
+.katex .sizing.reset-size5.size10, .katex .fontsize-ensurer.reset-size5.size10 { font-size: 2.30444em; }
+.katex .sizing.reset-size5.size11, .katex .fontsize-ensurer.reset-size5.size11 { font-size: 2.76444em; }
+.katex .sizing.reset-size6.size1, .katex .fontsize-ensurer.reset-size6.size1 { font-size: 0.5em; }
+.katex .sizing.reset-size6.size2, .katex .fontsize-ensurer.reset-size6.size2 { font-size: 0.6em; }
+.katex .sizing.reset-size6.size3, .katex .fontsize-ensurer.reset-size6.size3 { font-size: 0.7em; }
+.katex .sizing.reset-size6.size4, .katex .fontsize-ensurer.reset-size6.size4 { font-size: 0.8em; }
+.katex .sizing.reset-size6.size5, .katex .fontsize-ensurer.reset-size6.size5 { font-size: 0.9em; }
+.katex .sizing.reset-size6.size6, .katex .fontsize-ensurer.reset-size6.size6 { font-size: 1em; }
+.katex .sizing.reset-size6.size7, .katex .fontsize-ensurer.reset-size6.size7 { font-size: 1.2em; }
+.katex .sizing.reset-size6.size8, .katex .fontsize-ensurer.reset-size6.size8 { font-size: 1.44em; }
+.katex .sizing.reset-size6.size9, .katex .fontsize-ensurer.reset-size6.size9 { font-size: 1.728em; }
+.katex .sizing.reset-size6.size10, .katex .fontsize-ensurer.reset-size6.size10 { font-size: 2.074em; }
+.katex .sizing.reset-size6.size11, .katex .fontsize-ensurer.reset-size6.size11 { font-size: 2.488em; }
+.katex .sizing.reset-size7.size1, .katex .fontsize-ensurer.reset-size7.size1 { font-size: 0.416667em; }
+.katex .sizing.reset-size7.size2, .katex .fontsize-ensurer.reset-size7.size2 { font-size: 0.5em; }
+.katex .sizing.reset-size7.size3, .katex .fontsize-ensurer.reset-size7.size3 { font-size: 0.583333em; }
+.katex .sizing.reset-size7.size4, .katex .fontsize-ensurer.reset-size7.size4 { font-size: 0.666667em; }
+.katex .sizing.reset-size7.size5, .katex .fontsize-ensurer.reset-size7.size5 { font-size: 0.75em; }
+.katex .sizing.reset-size7.size6, .katex .fontsize-ensurer.reset-size7.size6 { font-size: 0.833333em; }
+.katex .sizing.reset-size7.size7, .katex .fontsize-ensurer.reset-size7.size7 { font-size: 1em; }
+.katex .sizing.reset-size7.size8, .katex .fontsize-ensurer.reset-size7.size8 { font-size: 1.2em; }
+.katex .sizing.reset-size7.size9, .katex .fontsize-ensurer.reset-size7.size9 { font-size: 1.44em; }
+.katex .sizing.reset-size7.size10, .katex .fontsize-ensurer.reset-size7.size10 { font-size: 1.72833em; }
+.katex .sizing.reset-size7.size11, .katex .fontsize-ensurer.reset-size7.size11 { font-size: 2.07333em; }
+.katex .sizing.reset-size8.size1, .katex .fontsize-ensurer.reset-size8.size1 { font-size: 0.347222em; }
+.katex .sizing.reset-size8.size2, .katex .fontsize-ensurer.reset-size8.size2 { font-size: 0.416667em; }
+.katex .sizing.reset-size8.size3, .katex .fontsize-ensurer.reset-size8.size3 { font-size: 0.486111em; }
+.katex .sizing.reset-size8.size4, .katex .fontsize-ensurer.reset-size8.size4 { font-size: 0.555556em; }
+.katex .sizing.reset-size8.size5, .katex .fontsize-ensurer.reset-size8.size5 { font-size: 0.625em; }
+.katex .sizing.reset-size8.size6, .katex .fontsize-ensurer.reset-size8.size6 { font-size: 0.694444em; }
+.katex .sizing.reset-size8.size7, .katex .fontsize-ensurer.reset-size8.size7 { font-size: 0.833333em; }
+.katex .sizing.reset-size8.size8, .katex .fontsize-ensurer.reset-size8.size8 { font-size: 1em; }
+.katex .sizing.reset-size8.size9, .katex .fontsize-ensurer.reset-size8.size9 { font-size: 1.2em; }
+.katex .sizing.reset-size8.size10, .katex .fontsize-ensurer.reset-size8.size10 { font-size: 1.44028em; }
+.katex .sizing.reset-size8.size11, .katex .fontsize-ensurer.reset-size8.size11 { font-size: 1.72778em; }
+.katex .sizing.reset-size9.size1, .katex .fontsize-ensurer.reset-size9.size1 { font-size: 0.289352em; }
+.katex .sizing.reset-size9.size2, .katex .fontsize-ensurer.reset-size9.size2 { font-size: 0.347222em; }
+.katex .sizing.reset-size9.size3, .katex .fontsize-ensurer.reset-size9.size3 { font-size: 0.405093em; }
+.katex .sizing.reset-size9.size4, .katex .fontsize-ensurer.reset-size9.size4 { font-size: 0.462963em; }
+.katex .sizing.reset-size9.size5, .katex .fontsize-ensurer.reset-size9.size5 { font-size: 0.520833em; }
+.katex .sizing.reset-size9.size6, .katex .fontsize-ensurer.reset-size9.size6 { font-size: 0.578704em; }
+.katex .sizing.reset-size9.size7, .katex .fontsize-ensurer.reset-size9.size7 { font-size: 0.694444em; }
+.katex .sizing.reset-size9.size8, .katex .fontsize-ensurer.reset-size9.size8 { font-size: 0.833333em; }
+.katex .sizing.reset-size9.size9, .katex .fontsize-ensurer.reset-size9.size9 { font-size: 1em; }
+.katex .sizing.reset-size9.size10, .katex .fontsize-ensurer.reset-size9.size10 { font-size: 1.20023em; }
+.katex .sizing.reset-size9.size11, .katex .fontsize-ensurer.reset-size9.size11 { font-size: 1.43981em; }
+.katex .sizing.reset-size10.size1, .katex .fontsize-ensurer.reset-size10.size1 { font-size: 0.24108em; }
+.katex .sizing.reset-size10.size2, .katex .fontsize-ensurer.reset-size10.size2 { font-size: 0.289296em; }
+.katex .sizing.reset-size10.size3, .katex .fontsize-ensurer.reset-size10.size3 { font-size: 0.337512em; }
+.katex .sizing.reset-size10.size4, .katex .fontsize-ensurer.reset-size10.size4 { font-size: 0.385728em; }
+.katex .sizing.reset-size10.size5, .katex .fontsize-ensurer.reset-size10.size5 { font-size: 0.433944em; }
+.katex .sizing.reset-size10.size6, .katex .fontsize-ensurer.reset-size10.size6 { font-size: 0.48216em; }
+.katex .sizing.reset-size10.size7, .katex .fontsize-ensurer.reset-size10.size7 { font-size: 0.578592em; }
+.katex .sizing.reset-size10.size8, .katex .fontsize-ensurer.reset-size10.size8 { font-size: 0.694311em; }
+.katex .sizing.reset-size10.size9, .katex .fontsize-ensurer.reset-size10.size9 { font-size: 0.833173em; }
+.katex .sizing.reset-size10.size10, .katex .fontsize-ensurer.reset-size10.size10 { font-size: 1em; }
+.katex .sizing.reset-size10.size11, .katex .fontsize-ensurer.reset-size10.size11 { font-size: 1.19961em; }
+.katex .sizing.reset-size11.size1, .katex .fontsize-ensurer.reset-size11.size1 { font-size: 0.200965em; }
+.katex .sizing.reset-size11.size2, .katex .fontsize-ensurer.reset-size11.size2 { font-size: 0.241158em; }
+.katex .sizing.reset-size11.size3, .katex .fontsize-ensurer.reset-size11.size3 { font-size: 0.28135em; }
+.katex .sizing.reset-size11.size4, .katex .fontsize-ensurer.reset-size11.size4 { font-size: 0.321543em; }
+.katex .sizing.reset-size11.size5, .katex .fontsize-ensurer.reset-size11.size5 { font-size: 0.361736em; }
+.katex .sizing.reset-size11.size6, .katex .fontsize-ensurer.reset-size11.size6 { font-size: 0.401929em; }
+.katex .sizing.reset-size11.size7, .katex .fontsize-ensurer.reset-size11.size7 { font-size: 0.482315em; }
+.katex .sizing.reset-size11.size8, .katex .fontsize-ensurer.reset-size11.size8 { font-size: 0.578778em; }
+.katex .sizing.reset-size11.size9, .katex .fontsize-ensurer.reset-size11.size9 { font-size: 0.694534em; }
+.katex .sizing.reset-size11.size10, .katex .fontsize-ensurer.reset-size11.size10 { font-size: 0.833601em; }
+.katex .sizing.reset-size11.size11, .katex .fontsize-ensurer.reset-size11.size11 { font-size: 1em; }
+.katex .delimsizing.size1 { font-family: KaTeX_Size1; }
+.katex .delimsizing.size2 { font-family: KaTeX_Size2; }
+.katex .delimsizing.size3 { font-family: KaTeX_Size3; }
+.katex .delimsizing.size4 { font-family: KaTeX_Size4; }
+.katex .delimsizing.mult .delim-size1 > span { font-family: KaTeX_Size1; }
+.katex .delimsizing.mult .delim-size4 > span { font-family: KaTeX_Size4; }
+.katex .nulldelimiter { display: inline-block; width: 0.12em; }
+.katex .delimcenter { position: relative; }
+.katex .op-symbol { position: relative; }
+.katex .op-symbol.small-op { font-family: KaTeX_Size1; }
+.katex .op-symbol.large-op { font-family: KaTeX_Size2; }
+.katex .op-limits > .vlist-t { text-align: center; }
+.katex .accent > .vlist-t { text-align: center; }
+.katex .accent .accent-body:not(.accent-full) { width: 0px; }
+.katex .accent .accent-body { position: relative; }
+.katex .overlay { display: block; }
+.katex .mtable .vertical-separator { display: inline-block; margin: 0px -0.025em; border-right: 0.05em solid; }
+.katex .mtable .vs-dashed { border-right: 0.05em dashed; }
+.katex .mtable .arraycolsep { display: inline-block; }
+.katex .mtable .col-align-c > .vlist-t { text-align: center; }
+.katex .mtable .col-align-l > .vlist-t { text-align: left; }
+.katex .mtable .col-align-r > .vlist-t { text-align: right; }
+.katex .svg-align { text-align: left; }
+.katex svg, .screenShotTempCanvas { display: block; position: absolute; width: 100%; height: inherit; fill: currentcolor; stroke: currentcolor; fill-rule: nonzero; fill-opacity: 1; stroke-width: 1; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke-opacity: 1; }
+.katex svg path { stroke: none; }
+.katex .stretchy { width: 100%; display: block; position: relative; overflow: hidden; }
+.katex .stretchy::before, .katex .stretchy::after { content: ""; }
+.katex .hide-tail { width: 100%; position: relative; overflow: hidden; }
+.katex .halfarrow-left { position: absolute; left: 0px; width: 50.2%; overflow: hidden; }
+.katex .halfarrow-right { position: absolute; right: 0px; width: 50.2%; overflow: hidden; }
+.katex .brace-left { position: absolute; left: 0px; width: 25.1%; overflow: hidden; }
+.katex .brace-center { position: absolute; left: 25%; width: 50%; overflow: hidden; }
+.katex .brace-right { position: absolute; right: 0px; width: 25.1%; overflow: hidden; }
+.katex .x-arrow-pad { padding: 0px 0.5em; }
+.katex .x-arrow, .katex .mover, .katex .munder { text-align: center; }
+.katex .boxpad { padding: 0px 0.3em; }
+.katex .fbox { box-sizing: border-box; border: 0.04em solid black; }
+.katex .fcolorbox { box-sizing: border-box; border: 0.04em solid; }
+.katex .cancel-pad { padding: 0px 0.2em; }
+.katex .cancel-lap { margin-left: -0.2em; margin-right: -0.2em; }
+.katex .sout { border-bottom-style: solid; border-bottom-width: 0.08em; }
+.output_wrapper pre code { display: -webkit-box !important; } 
+.output_wrapper .hljs{display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: white;}
+
+.output_wrapper .hljs-name,.output_wrapper  .hljs-strong{font-weight: bold;}
+
+.output_wrapper .hljs-code,.output_wrapper  .hljs-emphasis{font-style: italic;}
+
+.output_wrapper .hljs-tag{color: rgb(98, 200, 243);}
+
+.output_wrapper .hljs-variable,.output_wrapper  .hljs-template-variable,.output_wrapper  .hljs-selector-id,.output_wrapper  .hljs-selector-class{color: rgb(173, 229, 252);}
+
+.output_wrapper .hljs-string,.output_wrapper  .hljs-bullet{color: rgb(162, 252, 162);}
+
+.output_wrapper .hljs-type,.output_wrapper  .hljs-title,.output_wrapper  .hljs-section,.output_wrapper  .hljs-attribute,.output_wrapper  .hljs-quote,.output_wrapper  .hljs-built_in,.output_wrapper  .hljs-builtin-name{color: rgb(255, 255, 170);}
+
+.output_wrapper .hljs-number,.output_wrapper  .hljs-symbol,.output_wrapper  .hljs-bullet{color: rgb(211, 99, 99);}
+
+.output_wrapper .hljs-keyword,.output_wrapper  .hljs-selector-tag,.output_wrapper  .hljs-literal{color: rgb(252, 194, 140);}
+
+.output_wrapper .hljs-comment,.output_wrapper  .hljs-deletion,.output_wrapper  .hljs-code{color: rgb(136, 136, 136);}
+
+.output_wrapper .hljs-regexp,.output_wrapper  .hljs-link{color: rgb(198, 180, 240);}
+
+.output_wrapper .hljs-meta{color: rgb(252, 155, 155);}
+
+.output_wrapper .hljs-deletion{background-color: rgb(252, 155, 155); color: rgb(51, 51, 51);}
+
+.output_wrapper .hljs-addition{background-color: rgb(162, 252, 162); color: rgb(51, 51, 51);}
+
+.output_wrapper .hljs a{color: inherit;}
+
+.output_wrapper .hljs a:focus,.output_wrapper  .hljs a:hover{color: inherit; text-decoration: underline;}
+ 
+.output_wrapper pre code {line-height: 18px; font-size: 14px; font-weight: normal; word-spacing: 0px; letter-spacing: 0px;} 
+.output_wrapper{font-size: 15px; color: rgb(62, 62, 62); line-height: 1.8; word-spacing: 2px; letter-spacing: 2px; font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif; background-image: linear-gradient(90deg, rgba(50, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0) 3%), linear-gradient(360deg, rgba(50, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0) 3%); background-size: 20px 20px; background-position: center center;}
+
+.output_wrapper *{font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;}
+
+.output_wrapper p{margin: 1.7em 0px;}
+
+.output_wrapper h1,.output_wrapper  h2,.output_wrapper  h3,.output_wrapper  h4,.output_wrapper  h5,.output_wrapper  h6{margin: 1.6em 0px; font-weight: bold;}
+
+.output_wrapper h1{font-size: 1.6em;}
+
+.output_wrapper h2{font-size: 1.4em;}
+
+.output_wrapper h3{font-size: 1.3em;}
+
+.output_wrapper h4{font-size: 1.2em;}
+
+.output_wrapper h5{font-size: 1em;}
+
+.output_wrapper h6{font-size: 1em;}
+
+.output_wrapper h3{border-bottom: 2px solid rgb(239, 112, 96); font-size: 1.3em;}
+
+.output_wrapper h3 span{display: inline-block; font-weight: normal; background: rgb(239, 112, 96); color: rgb(255, 255, 255); padding: 3px 10px 1px; border-top-right-radius: 3px; border-top-left-radius: 3px; margin-right: 3px;}
+
+.output_wrapper h3::after{display: inline-block; content: " "; vertical-align: bottom; border-bottom: 36px solid rgb(239, 235, 233); border-right: 20px solid transparent;}
+
+.output_wrapper ul,.output_wrapper  ol{padding-left: 32px;}
+
+.output_wrapper ul{list-style-type: disc;}
+
+.output_wrapper ol{list-style-type: decimal;}
+
+.output_wrapper li *{}
+
+.output_wrapper li{margin-bottom: 0.5em;}
+
+.output_wrapper .code_size_default{line-height: 18px; font-size: 14px; font-weight: normal; word-spacing: 0px; letter-spacing: 0px;}
+
+.output_wrapper .code_size_tight{line-height: 15px; font-size: 11px; font-weight: normal; word-spacing: -3px; letter-spacing: 0px;}
+
+.output_wrapper pre code{font-family: Consolas, Inconsolata, Courier, monospace; border-radius: 0px;}
+
+.output_wrapper blockquote{display: block; padding: 15px 15px 15px 1rem; font-size: 0.9em; margin: 1em 0px; color: rgb(0, 0, 0); border-left: 5px solid rgb(239, 112, 96); background: rgb(239, 235, 233); overflow: auto; overflow-wrap: normal; word-break: normal;}
+
+.output_wrapper blockquote p{margin: 0px;}
+
+.output_wrapper a{text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;}
+
+.output_wrapper strong{font-weight: bold; color: rgb(233, 105, 0);}
+
+.output_wrapper em{color: rgb(98, 0, 234);}
+
+.output_wrapper del{font-style: italic; text-decoration: none; color: rgb(41, 98, 255);}
+
+.output_wrapper strong em{font-weight: bold; color: rgb(197, 17, 98);}
+
+.output_wrapper hr{height: 1px; margin: 1.5rem 0px; border-right: none; border-bottom: none; border-left: none; border-image: initial; border-top: 1px dashed rgb(165, 165, 165);}
+
+.output_wrapper code{overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(248, 35, 117); background: rgb(248, 248, 248);}
+
+.output_wrapper img{display: block; margin: 0px auto; max-width: 100%;}
+
+.output_wrapper figcaption{margin-top: 10px; text-align: center; color: rgb(153, 153, 153); font-size: 0.7em;}
+
+.output_wrapper table{display: table; width: 100%; text-align: left;}
+
+.output_wrapper tbody{border: 0px;}
+
+.output_wrapper table tr{border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: white;}
+
+.output_wrapper table tr:nth-child(2n){background-color: rgb(248, 248, 248);}
+
+.output_wrapper table tr th,.output_wrapper  table tr td{font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: left;}
+
+.output_wrapper table tr th{font-weight: bold; background-color: rgb(240, 240, 240);}
+
+.output_wrapper .katex-display{font-size: 1.22em;}
+
+.output_wrapper .katex{padding: 8px 3px;}
+
+.output_wrapper .katex-display > .katex{display: inline-block; text-align: center; padding: 3px;}
+
+.output_wrapper .katex img{display: inline-block; vertical-align: middle;}
+
+.output_wrapper a[href^="#"] sup{vertical-align: super; margin: 0px 2px; padding: 1px 3px; color: rgb(255, 255, 255); background: rgb(102, 102, 102); font-size: 0.7em;}
+
+.output_wrapper .task-list-list{list-style-type: none;}
+
+.output_wrapper .task-list-list.checked{color: rgb(62, 62, 62);}
+
+.output_wrapper .task-list-list.uncheck{color: rgb(191, 193, 191);}
+
+.output_wrapper .task-list-list .icon_uncheck,.output_wrapper  .task-list-list .icon_check{display: inline-block; vertical-align: middle; margin-right: 10px;}
+
+.output_wrapper .task-list-list .icon_check::before{content: "√"; border: 2px solid rgb(62, 62, 62); color: red;}
+
+.output_wrapper .task-list-list .icon_uncheck::before{content: "x"; border: 2px solid rgb(191, 193, 191); color: rgb(191, 193, 191);}
+
+.output_wrapper .task-list-list .icon_check::before,.output_wrapper  .task-list-list .icon_uncheck::before{padding: 2px 8px 2px 5px; border-radius: 5px;}
+
+.output_wrapper .toc{margin-left: 25px;}
+
+.output_wrapper .toc_item{display: block;}
+
+.output_wrapper .toc_left{margin-left: 25px;}
+ 
+</style>  
+  <style type="text/css" id="export_setting_css">body { width: 100%; margin: 0px; padding: 0px; background: rgb(81, 154, 178); }
+#export_content { margin: 40px 20%; padding: 20px; border: 1px solid rgb(149, 155, 111); background: rgb(255, 255, 255); }</style>  
+
+</head><body><div id="export_content"><div class="output_wrapper" id="output_wrapper_id"><blockquote>
+  <p>本文将从以下几个方面进行分享。其中包括HTTP发展史，HTTP缓存代理机制，常用的web攻击，HTTP和HTTPS的流量识别，网络协议学习的工具推荐以及高频HTTP与HTTPS的高频面试题题解等，开工。</p>
+</blockquote>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/f06c7565-0f84-436b-8ee7-acf6f9b7ec02.png" alt="提纲" title="提纲"><figcaption>提纲</figcaption></figure>
+<blockquote>
+  <p>1989年，蒂姆·伯纳斯 - 李（Tim Berners-Lee）在论文中提出可以在互联网上构建超链接文档，并提出了三点.</p>
+</blockquote>
+<p>URI：统一资源标识符。互联网的唯一ID</p>
+<p>HTML：超文本文档</p>
+<p>HTTP:传输超文本的文本传输协议</p>
+<h2 id="h1http"><span>1 HTTP应用在哪儿</span></h2>
+<blockquote>
+  <p>学习一门知识，采用五分钟时间看看这个知识是干啥的可能会更加有目的性。HTTP可谓无处不在，这里例举出几个。</p>
+</blockquote>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/4b2d4bbc-3240-435b-aa97-cc4922156b09.png" alt="HTTP应用场景" title="HTTP应用场景"><figcaption>HTTP应用场景</figcaption></figure>
+<h2 id="h2http"><span>2 HTTP是什么</span></h2>
+<p>HTTP(hypertext transport protocol)翻译过来为"超文本传输协议"，文本可以理解为简单的字符文字组合，也可以理解为更为复杂的音频或者图像等。那么将这个词语拆分为三个部分。</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/dd60b2ca-3ca6-40fc-b02d-0d011f947e28.png" alt="超文本传输协议" title="超文本传输协议"><figcaption>超文本传输协议</figcaption></figure>
+<p>"超文本"和"文本"相比多了一个字"超"，这样看来比文本丰富，因为它可以将多种文本/图像等进行混合，更重要的是可以从一个文本跳转到另一个文本(文本连接)。</p>
+<p>"传输"，传输的过程中需要沟通，沟通即可能一对一沟通也可能一对多沟通(进行内容协商)，无论怎么样，参加沟通的人数&gt;1，想尽一切一切办法更快更好的完成相应的任务。</p>
+<p>"协议"，无规矩不成方圆，做机密项目之前需要签署保密协议，找工作要签"三方协议"，三方协议是学校，公司，和个人组成的协议，都是为了让大家受一定的约束，违反了即有相应的惩罚。</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/b89622ca-81de-4663-a2b8-d58747105fb1.png" alt="三方协议" title="三方协议"><figcaption>三方协议</figcaption></figure>
+<h2 id="h3http"><span>3 不同版本的HTTP</span></h2>
+<p>HTTP/0.9</p>
+<p>当时网络资源匮乏，0.9版本相对简单，采用纯文本格式，且设置为只读，所以当时只能使用"Get"的方式从服务器获得HTML文档，响应以后则关闭。如下图所示</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">GET</span>&nbsp;/Mysite.html<br></code></pre>
+<p>响应中只包含了文档本身。响应内容无响应头，无错误码，无状态码，可以说是"裸奔"。</p>
+<pre><code class="hljs apache"><span class="hljs-section">&lt;HTML&gt;</span><br><span class="hljs-attribute">Hello</span>&nbsp;world<br><span class="hljs-section">&lt;/HTML&gt;</span><br><span class="hljs-attribute">HTTP</span>/1.0<br></code></pre>
+<p>此时HTTP/0.9请求过程如下</p>
+<ul>
+<li><p>应用层的HTTP建立在传输层的TCP之上并运用TCP可靠等特性，先三次握手建立连接</p></li>
+<li><p>客户端请求建立连接(此时只有GET)</p></li>
+<li><p>服务端响应请求，数据以 ASCII 字符流返回给客戶端</p></li>
+<li><p>传输完成，断开连接。</p></li>
+</ul>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/9c6a9f10-9f30-474b-8731-17489ead73c7.png" alt="HTTP 0.9" title="HTTP 0.9"><figcaption>HTTP 0.9</figcaption></figure>
+<p>HTTP1.0</p>
+<p>随着时代的进步，仅仅文本的传输无法满足需求，更多情况需要采用图文的方式才能生动的表达出自己的观点。随着1995年开发出Apache，同时其他的多媒体等技术发展迅速，从而进一步的促使HTTP新功能的出现。HTTP1.0在1996年诞生，增加了一下几个方面：</p>
+<ul>
+<li><p>之前只有Get方法，现在增加Post(加参数)，Head方法</p></li>
+<li><p>加入协议版本号，同时添加文件处理类型</p></li>
+<li><p>加入HTTP Header，让HTTP处理请求更加灵活</p></li>
+<li><p>增加响应状态码，标记出错的原因</p></li>
+<li><p>提供国际化(不同语言)支持</p></li>
+</ul>
+<p>典型的请求过程</p>
+<pre><code class="hljs makefile">GET&nbsp;/image.html&nbsp;HTTP/1.0<br><span class="hljs-section">User-Agent:&nbsp;Mozilla/5.0&nbsp;(Windows&nbsp;NT&nbsp;6.1;&nbsp;WOW64)</span><br><br>200&nbsp;OK<br><span class="hljs-section">Date:&nbsp;Tue,&nbsp;17&nbsp;Nov&nbsp;2020&nbsp;09:15:31&nbsp;GMT</span><br><span class="hljs-section">Content-Type:&nbsp;text/html</span><br>&lt;HTML&gt;&nbsp;<br>一个包含图片的页面<br>&nbsp;&nbsp;&lt;IMG&nbsp;SRC=<span class="hljs-string">"/image.gif"</span>&gt;<br>&lt;/HTML&gt;<br></code></pre>
+<p>HTTP1.0通信过程</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/8d78bc03-056a-434f-a7ae-bbbe29acb2bc.png" alt="HTTP1.0" title="HTTP1.0"><figcaption>HTTP1.0</figcaption></figure>
+<p>HTTP /1.1</p>
+<p>1995年是不平凡的一年，网景公司和微软开启浏览器大战，谁都想当老大。1999年HTTP/1.1发布并成为标准，写入RFC，以为以后不管是网关还是APP等，只要你要使用HTTP，就得遵守这个标准。</p>
+<ul>
+<li><p>继续增加了PUT等方法</p></li>
+<li><p>允许持久连接</p></li>
+</ul>
+<p>随着文件越来越大，图片等信息越来越复杂，如果每一次上传下载文件都需要建立连接断开连接的过程将增加大量的开销。为此，提出了持久连接，也就是一次TCP连接可以具有多个HTTP请求。当然持久连接是可选择的，如果考虑关闭，只需要使用Connecttion:close关闭即可。长连接如下图所示</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/587b7065-1d0a-40c6-8abf-4bc17f0c1453.png" alt="长连接" title="长连接"><figcaption>长连接</figcaption></figure>
+<ul>
+<li><span>强制要求Host头</span></li>
+</ul>
+<p>我们知道，在电商系统中，经常会因为促销活动导致流量飙升，为了缓解流量，其中有种方法即加缓存或者加服务器。如果是单台服务器负载过大，数据库可能分库分表。数据结构算法中分而治之方法亦是如此。那么HTTP中，同样的道理，如果文件太大，就大文件切分为小文件块发送。</p>
+<p>HTTP /2</p>
+<p>HTTP/1.1的出现，几年间出来大量牛掰的互联网公司，发展实在是太快，但是HTTP1.1中这几点成为诟病</p>
+<ul>
+<li><span>原因1 TCP自带慢启动</span></li>
+</ul>
+<p>顾名思义，"慢启动"从0到1循循渐进。轿车启动不会按下按钮就直接起飞，而是缓慢调节到适合的速度。这不是挺好的？为什么会带来性能问题呢。我们知道一个页面有静态数据，动态页面，很多小文件在加载的过程中就会直接发起请求，这样导致太多的请求都会经历慢启动过程，花费时间太多。</p>
+<ul>
+<li><span>原因2 多条TCP连接带宽竞争</span></li>
+</ul>
+<p>带宽固定，多条TCP连接同时发起竞争带宽资源，由于各个TCP连接之间没有通信机制，也无法得知哪些资源优先级更高，从而导致想快速下载的资源反而延迟下载。</p>
+<ul>
+<li><span>原因3 头部阻塞</span></li>
+</ul>
+<p>阻塞，在网络编程中，我们采用异步，多路复用(epoll)方式尽量让cpu少等待多干事。在HTTP1.1中，虽然大家共用了一条TCP通道，但是第一个请求没有结束，第二请求就阻塞等待，也就是说不能同时发送接收数据。那么一个网页很多数据文件，如果能够同时发出请求，让部分数据文件能够得到响应并预处理，这样就大大的利用了带宽和cpu的资源。基于这些因素，出现了HTTP2</p>
+<p>如何解决头部阻塞呢？</p>
+<p>HTTP是一问一答的模式，大家都在这个队列排队导致堵塞，那就多个队列并发进行，也就是"对同一个域名发起多个长连接"。举个例子，在火车站排队买票的时候，如果只有一个窗口可用，大家只能苦等，多开几个窗口就可缓解这个问题。</p>
+<p>这个时候用户数 * 并发数(上限6-8)已经不错得效果，但是互联网速度太快，火车站就这么大，窗口也就这么多，怎么办，建新的火车站进行分流(大部分城市都有什么东站 西站)。在这里叫做"域名分片"，使用多个域名，这些域名指向指向同一服务器。</p>
+<p>HTTP/3 </p>
+<p>HTTP/2看似很完美了吧，但是Google轮子哥可不服，其他人在研究HTTP/2的时候，它们就在琢磨QUIC。那QUIC有啥牛掰的地方呢</p>
+<blockquote>
+  <p>QUIC是Google开发的一个基于UDP且能像TCP一样具有可靠性特点的协议。具备像HTTP/2一样的应用数据二进制分帧传输。其主要解决的问题有两个。</p>
+</blockquote>
+<ol>
+<li><p>进一步解决线头阻塞问题。通过独立不同流，让各个流之间实现相互独立传输，互不干扰</p></li>
+<li><p>切换网络时的连接保持。wifi和3G/4G经常需要来回切换。基于TCP的协议，会因为网络的切换导致IP地址的改变。而基于UDP的QUIC协议，及时切换也可以恢复之前与服务器的连接。</p></li>
+</ol>
+<h2 id="h4http"><span>4 HTTP报文详解</span></h2>
+<blockquote>
+  <p>客户端与服务端进行交互的信息为报文。客户端为请求报文，服务端为响应报文。我们先用wireshark抓一个博客看看</p>
+</blockquote>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/6039ca72-01e6-4832-9b1a-25227906cf02.png" alt="报文层次结构" title="报文层次结构"><figcaption>报文层次结构</figcaption></figure>
+<pre><code class="hljs makefile">GET&nbsp;/article/12&nbsp;HTTP/1.1<br><span class="hljs-section">Host:&nbsp;www.xxx.cn</span><br><span class="hljs-section">Connection:&nbsp;keep-alive</span><br><span class="hljs-section">Cache-Control:&nbsp;max-age=0</span><br><span class="hljs-section">Upgrade-Insecure-Requests:&nbsp;1</span><br><span class="hljs-section">User-Agent:&nbsp;Mozilla/5.0&nbsp;(Windows&nbsp;NT&nbsp;10.0;&nbsp;Win64;&nbsp;x64)&nbsp;AppleWebKit/537.36&nbsp;(KHTML,&nbsp;like&nbsp;Gecko)&nbsp;Chrome/80.0.3987.106&nbsp;Safari/537.36</span><br><span class="hljs-section">Accept:&nbsp;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</span><br><span class="hljs-section">Accept-Encoding:&nbsp;gzip,&nbsp;deflate</span><br><span class="hljs-section">Accept-Language:&nbsp;zh-CN,zh;q=0.9</span><br><span class="hljs-section">Cookie:&nbsp;SESSION=so9nlsvenminor5abs65sh9dsa</span><br></code></pre>
+<pre><code class="hljs makefile">HTTP/1.1&nbsp;200&nbsp;OK<br><span class="hljs-section">Server:&nbsp;nginx</span><br><span class="hljs-section">Date:&nbsp;Sun,&nbsp;17&nbsp;May&nbsp;2020&nbsp;17:04:29&nbsp;GMT</span><br><span class="hljs-section">Content-Type:&nbsp;text/html;&nbsp;charset=UTF-8</span><br><span class="hljs-section">Transfer-Encoding:&nbsp;chunked</span><br><span class="hljs-section">Connection:&nbsp;keep-alive</span><br><span class="hljs-section">Vary:&nbsp;Accept-Encoding</span><br><span class="hljs-section">X-Powered-By:&nbsp;blade-2.0.6-BETA</span><br><span class="hljs-section">Content-Encoding:&nbsp;gzip</span><br></code></pre>
+<p>请求报文</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/0eeb71e3-297a-4e57-adba-53be0476b67b.png" alt="请求报文" title="请求报文"><figcaption>请求报文</figcaption></figure>
+<p>请求报文通常由三部分组成：</p>
+<p>起始行：描述请求或者响应的基本信息</p>
+<p>头部字段集合：key-value形式说明报文</p>
+<p>消息正文：实际传输诸如图片等信息。具体如下图试试</p>
+<p>1 请求方法：一共有八种方法选择，如下图所示。采用不同的方法获取不同的资源</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/d9836d9a-7141-45e6-a982-e84982080123.png" alt="HTTP请求方法详解" title="HTTP请求方法详解"><figcaption>HTTP请求方法详解</figcaption></figure>
+<p>说一下非常常见的几种请求方法</p>
+<p>Get：从服务器中取资源。可以请求图片，视频等</p>
+<p>HEAD:和Get类似，但是从服务器请求的资源不会反悔请求的实体数据，只会反悔响应头</p>
+<p>POST/PUT：对应于GET，向服务器发送数据</p>
+<p>2 URI</p>
+<blockquote>
+  <p>统一资源标识符(Uniform Resource Identifier),严格来说不等于网址，它包含URL和URN，可是URL太出名了以致于URL="网址"。无论开发，测试运维配置都离不开URI,所以好好掌握。</p>
+</blockquote>
+<p>网络层的IP主要目的是解决路由和寻址。现在的IP地址按照"."分割，总共2的32次方大约42亿。对于计算机来说比较方便，但是对于人类来说还是不容易记忆，此时出现DNS了，他把IP地址映射为我们平时常见的"redis.org"，按照.分割域名，从左到右级别越高，最右边为"顶级域名"。如下图所示</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/5ec7961e-1ed0-48c2-8f0a-bdce09b96fe9.png" alt="域名体系" title="域名体系"><figcaption>域名体系</figcaption></figure>
+<p>好了，现在TCP提供可靠(数据不丢失)且字节流(数据完整性)，而且也有方便我们记忆的域名，但是互联网资源千万种，也不知道访问什么(图片，文字，视频一大堆)，这个时候URI(统一资源标识符)出现了，那长啥样？</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/49ee5281-55b4-4d59-8645-ce8eb55cd428.png" alt="URI格式" title="URI格式"><figcaption>URI格式</figcaption></figure>
+<p>协议名:HTTP协议，另外还有ftp等协议。告知访问资源时使用什么协议。</p>
+<p>紧接着是分隔符:"://"</p>
+<p>主机名：标记互联网主机，可以是IP也可以是域名，如果不写端口则使用默认端口，例如HTTP为80，HTTPS为443.</p>
+<p>登录认证信息：登录主机时的用户名密码(不建议，直接告诉了别人你的隐私信息)</p>
+<p>主机名：此处可以是域名也可以是IP，如果不写端口号则是默认端口。比如HTTP默认端口为80，HTTPS默认端口为443</p>
+<p>资源所在位置：资源在主机上的位置，使用“/”分隔多级目录，在这里是“/en/download.html”。注意，必须"/"开头</p>
+<p>参数：用"?"开始，表示额外的请求要求。通常使用"key=value"的方式存在，如果多个"key=value"则使用"&amp;"相连。</p>
+<p>看几个例子</p>
+<p>http://nginx.org/en/download.html</p>
+<p>file:///E:/Demo/index/ </p>
+<blockquote>
+  <p>这里注意是三个"///"，因为前面"://"作为分隔符，资源路径按照"/"开头。</p>
+</blockquote>
+<p>既然规则这么多，对于接收方而言需要完成的解析也需要遵守规则，全球用户很多使用HTTP，每个国家地区所使用语言不同，HTTP为了能对其进行统一处理，引入了URI编码，方法比较简单，将非ASCII或者特殊字符全部转换为十六进制字节值，同时在前面加入"%"。比如空格被转换为"%20","中国"就编码为"%E4%B8%AD%E5%9B%BD%0A"。</p>
+<p>3 请求体</p>
+<p>响应报文</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/dabbb26d-01f6-4785-a75e-6eabc0bc2d93.png" alt="响应报文" title="响应报文"><figcaption>响应报文</figcaption></figure>
+<p>状态行----服务器响应的状态</p>
+<p>&lt;1&gt; 版本号：使用的HTTP什么版本</p>
+<p>&lt;2&gt; 状态码：不同数字代表不同的结果，就如我们在编码时，通过返回不同的值代表不同的语义。</p>
+<p>状态码一共分为5类。</p>
+<blockquote>
+  <p>1××：处于中间状态，还需后续操作</p>
+  <p>2××：成功收到报文并正确处理</p>
+</blockquote>
+<p>"200 OK"</p>
+<p>最常见的成功状态码，表示一切正常，客户端获得期许的处理结果。如果不是Head请求，那么在响应头中通常会有body数据。</p>
+<p>"204 No Content"</p>
+<p>这个的含义和"200"很相似，不同之处在于它的响应头中没有body数据。</p>
+<p>"206 Partial Content"</p>
+<p>是 HTTP 分块下载或断点续传的基础，在客户端发送“范围请求”、要求获取资源的部分数据时出现，它与 200 一样，也是服务器成功处理了请求，但 body 里的数据不是资源的全部，而是其中的一部分。状态码 206 通常还会伴随着头字段“Content-Range”，表示响应报文里 body 数据的具体范围，供客户端确认，例如“Content-Range: bytes 0-99/5000”，意思是此次获取的是总计 5000 个字节的前 100 个字节。</p>
+<blockquote>
+  <p>3××：重定向到其他资源位置</p>
+</blockquote>
+<p>"301 Moved Permanently"</p>
+<p>“永久重定向”，意思是本地请求的资源以及不存在，使用新的URI再次访问。</p>
+<p>“302 Found”</p>
+<p>“Moved Temporarily”，“临时重定向”，临时则所请求的资源暂时还在，但是目前需要用另一个URI访问。</p>
+<p>301 和 302 通过在字段Location中表明需要跳转的URI。两者最大的不同在于一个是临时改变，一个是永久改变。举个例子，有时候需要将网站全部升级为HTTPS，这种永久性改变就需要配置永久的"301"。有时候晚上更新系统，系统暂时不可用，可以配置"302"临时访问，此时不会做缓存优化，第二天还会访问原来的地址。</p>
+<p>“304 Not Modified” </p>
+<p>运用于缓存控制。它用于 If-Modified-Since 等条件请求，表示资源未修改，可以理解成“重定向已到缓存的文件”（即“缓存重定向”）。</p>
+<blockquote>
+  <p>4××：请求报文有误，服务器无法处理</p>
+</blockquote>
+<p>"400 Bad Request”</p>
+<p>通用错误码，表示请求报文有错误，但是这个错误过于笼统。不知道是客户端还是哪里的错误，所以在实际应用中，通常会返回含有明确含义的状态码。</p>
+<p>“403 Forbidden”</p>
+<p>注意了，这一个是表示服务器禁止访问资源。原因比如涉及到敏感词汇、法律禁止等。当然，如果能让客户端有一个清晰的认识，可以考虑说明拒绝的原因并返回即可。</p>
+<p>“404 Not Found”</p>
+<p>这可能是我们都知道且都不想看到的状态码之一，它的本意是想要的资源在本地未找到从而无法提供给服务端，但是现在，只要服务器"耍脾气"就会给你返回 404，而我们也无从得知后面到底是真的未找到，还是有什么别的原因，</p>
+<p>"405 Method Not Allowed"</p>
+<p>获取资源的方法好几种，我们可以对某些方法进行限制。例如不允许 POST 只能 GET；</p>
+<p>"406 Not Acceptable"</p>
+<p>客户端资源无法满足客户端请求的条件，例如请求中文但只有英文；</p>
+<p>"408 Request Timeout"</p>
+<p>请求超时，服务器等待了过长的时间；</p>
+<p>"409 Conflict"：</p>
+<p>多个请求发生了冲突，可以理解为多线程并发时的竞态；</p>
+<p>413 Request Entity Too Large：</p>
+<p>请求报文里的 body 太大；</p>
+<p>414 Request-URI Too Long：请求行里的 URI 太大；</p>
+<p>429 Too Many Requests：客户端发送了太多的请求，<br>通常是由于服务器的限连策略；</p>
+<p>431 Request Header Fields Too Large：请求头某个字<br>段或总体太大；</p>
+<blockquote>
+  <p>5××：服务器错误，服务器对请求出的时候发生内部错误。</p>
+</blockquote>
+<p>“500 Internal Server Error”</p>
+<p>和400 类似，属于一个通用的错误码，但是服务器到底是什么错误我们不得而知。其实这是好事，尽量少的将服务器资源暴露外网，尽量保证服务器的安全。</p>
+<p>“502 Bad Gateway”</p>
+<p>通常是服务器作为网关或者代理时返回的错误码，表示服务器自身工作正常，访问后端服务器时发生了错误，但具体的错误原因也是不知道的。</p>
+<p>“503 Service Unavailable”</p>
+<p>表示服务器当前很忙，暂时无法响应服务，我们上网时有时候遇到的“网络服务正忙，请稍后重试”的提示信息就是状态码 503。</p>
+<p>503 是一个“临时”的状态，</p>
+<p>暂时比较忙，稍后提供服务。在响应报文中的“Retry-After”字段，指示客户端可以在多久以后再次尝试发送请求。</p>
+<p>4 请求体</p>
+<blockquote>
+  <p>上面大部分都是涉及到header部分，还有非常重要的body，everybody</p>
+</blockquote>
+<p>头字段注意事项</p>
+<p>&lt;1&gt; 字段名不区分大小写，例如“Host”也可以写成“host”，但首字母大写的可读性更好；</p>
+<p>&lt;2&gt; 字段名里不允许出现空格，可以使用连字符“-”，但不能使用下划线"_"。例如，“test-name”是合法的字段名，而“test name”“test_name”是不正确的字段名；</p>
+<p>&lt;3&gt; 字段名后面必须紧接着“:”，不能有空格，而":"后的字段值前可以有多个空格；</p>
+<p>&lt;4&gt; 字段的顺序是没有意义的，可以任意排列不影响语义；</p>
+<p>&lt;5&gt; 字段原则上不能重复，除非这个字段本身的语义允许，例如 Set-Cookie。</p>
+<p>HTTP的body常常被分为这几种的类别</p>
+<p>&lt;1&gt; text:超文本text/html,纯文本text/plain</p>
+<p>&lt;2&gt; audio/video:音视频数据</p>
+<p>&lt;3&gt; application: 可能是文本，也可能是二进制，交给上层应用处理</p>
+<p>&lt;4&gt; image: 图像文件。image/png等</p>
+<p>但是带宽一定，数据大了通常考虑使用压缩算法进行压缩，在HTTP中使用Encoding type表示，常用的压缩方式有下面几种</p>
+<p>&lt;1&gt; gzip:</p>
+<blockquote>
+  <p>一种数据格式，默认且目前仅使用deflate算法压缩data部分</p>
+</blockquote>
+<p>&lt;2&gt; deflate:</p>
+<blockquote>
+  <p>deflate是一种压缩算法，是huffman编码的一种加强</p>
+</blockquote>
+<p>&lt;3&gt; br:</p>
+<blockquote>
+  <p>br通过变种的LZ77算法、Huffman编码以及二阶文本建模等方式进行数据压缩，其他压缩算法相比，它有着更高的压塑压缩效率</p>
+</blockquote>
+<p>使用相应的压缩方法在带宽一定的情况下确实有不错的效果，但是gzip等主要针对文件压缩效果不错，但是对视频就不行了。这个时候是不是可以使用数据结构中常用的分而治之，大化小再合并的方式呢，</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/48afc302-3d0f-47d4-954c-c1ed47991c7b.png" alt="文件拆分" title="文件拆分"><figcaption>文件拆分</figcaption></figure>
+<p>ok，在报文中使用"Transer-Encoding:chunked"表示，代表body部分数据是分块传输的。另外在body中存在一个content-length字段表示body的长度，两者不能共存，另外很多时候是流式数据，body中没有指明content-length，这个时候一般就是chunked传输了。</p>
+<p>现在可以通过采用分块的方式增强带宽的利用率，那他的编码规则如何呢</p>
+<p>&lt;1&gt; 每一个分块包含长度和数据块</p>
+<p>&lt;2&gt; 长度头按照CRLF结束</p>
+<p>&lt;3&gt; 数据块在长度快后，且最后CRLF结尾</p>
+<p>&lt;4&gt; 使用长度0表示结束，"0\r\n\r\n"</p>
+<p>我们还是看图加深印象</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/9fb476d7-b956-48b5-a3ca-3ef88ab1af6e.png" alt="chunked分块" title="chunked分块"><figcaption>chunked分块</figcaption></figure>
+<p>分块解决了咋们一部分问题，但是有的时候我们想截断发送怎么办呢。在HTTP中提供了使用字段“Accept - Ranges: bytes”，明确告知客户端：“我是支持范围请求的”。那么Range范围是怎样的呢，Range从0开始计算，比如Range:0-5则读取前6个字节，服务器收到了这个请求，将如何回应呢</p>
+<p>&lt;1&gt; 合法性检查。比如一共只有20字节，但是请求range：100-200。此时会返回416----"范围请求有误"</p>
+<p>&lt;2&gt; 范围正常，则返回216，表示请求数据知识一部分</p>
+<p>&lt;3&gt; 服务器端在相应投资端增加Content-Range,格式"bytes x-y/length"。</p>
+<p>敲黑板：断点续传怎么操作？</p>
+<p>&lt;1&gt; 查看服务器是否支持范围请求并记录文件大小</p>
+<p>&lt;2&gt; 多个线程分别负责不同的range</p>
+<p>&lt;3&gt; 下载同时记录进度，即使因为网络等原因中断也没事，Range请求剩余即可</p>
+<p>现在我们通过MIME-TYPE和Encoding-type可以知道body部分的类型，下一步将是对内容进行协商。HTTP中，请求体中使用Accept告诉服务端需要什么类型数据(我能处理哪些类型数据)，响应头中使用Content表明发送了什么类型数据，具体如下图所示</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/49b68e6d-1388-47bc-921f-cb371ced667a.png" alt="" title=""><figcaption></figcaption></figure>
+<p>好了，为了各个国家民族顺利友好的沟通和明确的区分。HTTP请求头中使用"type-subtype"，注意此时分隔符是"-"。比如en-GB表示英式英语，zh-CN表示常用的汉语，那对于客户端而言，它通过Accept-Language来标记自己可以理解的自然语言，对应的服务端使用Content-Language表明实体数据使用的语言类型，如下图所示。</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/fab59422-0ed9-4bac-a016-c8e36e7e6f57.png" alt="字符集和编码" title="字符集和编码"><figcaption>字符集和编码</figcaption></figure>
+<p>Cookie机制</p>
+<blockquote>
+  <p>HTTP是无状态、无记忆的，Cookie机制的出现让其有记忆功能，是怎么个实现呢</p>
+</blockquote>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/345d0b55-453a-4367-9327-65dff0cad6e3.png" alt="Cookie" title="Cookie"><figcaption>Cookie</figcaption></figure>
+<p>从上图我们可以知道Cookie是由浏览器负责存储，并不是操作系统负责，我们换个浏览器打开同样的网页，服务就认不出来了。</p>
+<p>Cookie常见的应用一个是身份识别，一个是广告追踪，比如我们在访问网页视频或者图片的时候，广告商会悄悄给我们Cookie打上标记，方便做关联分析和行为分析，从而给我推荐一些相关内容。</p>
+<p>HTTP代理</p>
+<blockquote>
+  <p>之前介绍的都是一问一答的情景，但是在大部分的情况下都会存在多台服务器进行通信服务。其中比较常见的就是在请求方与应答方中间增加一个中间代理。</p>
+</blockquote>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/1dba5e6a-8519-430e-b05e-f2ac09d9bb18.png" alt="代理" title="代理"><figcaption>代理</figcaption></figure>
+<p>代理作为中间位置，相对请求方为服务端，相当于后端服务端为请求方。代理常见的功能为负载均衡。在负载均衡中需要区分正向代理与反向代理，其中也就会涉及调度算法，比如轮询还是一致性哈希等。</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/b754f313-7cc2-48eb-9f91-d5358498ab30.png" alt="正向代理与反向代理" title="正向代理与反向代理"><figcaption>正向代理与反向代理</figcaption></figure>
+<p>那么问题来了，代理作为隐藏身份，相当于隐藏了真实的客户端与服务端，那在是不是</p>
+<h2 id="h5https"><span>5 HTTPS</span></h2>
+<blockquote>
+  <p>好人占多数，坏人也不少。总有些要搞坏事，因为HTTP是明文，所以需要想办法保护明文，从而出现了https。</p>
+</blockquote>
+<p>安全是什么</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/2b169290-33cb-4579-9e46-3a83aa0083f7.png" alt="安全四要素" title="安全四要素"><figcaption>安全四要素</figcaption></figure>
+<p>机密性</p>
+<blockquote>
+  <p>对信息进行保密，只能可信的人可以访问(让我想起时间管理者)。</p>
+</blockquote>
+<p>完整性</p>
+<blockquote>
+  <p>数据在传输过程中内容不被"篡改"。虽然机密性对数据进行保密了，但是有上策也有下策(hack)</p>
+</blockquote>
+<p>身份认证</p>
+<blockquote>
+  <p>证明自己的身份是本人，保证其消息发给可信的人</p>
+</blockquote>
+<p>不可否认</p>
+<blockquote>
+  <p>君子一言驷马难追，说话算数，说过的话做过的事要有所保证</p>
+</blockquote>
+<p>HTTPS</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/f0e104b0-f584-4b2d-b41d-f5a6cba60d82.png" alt="HTTP和HTTPS" title="HTTP和HTTPS"><figcaption>HTTP和HTTPS</figcaption></figure>
+<p>从上图我们知道HTTPS无非是在传输层和应用层中间加了一层TLS，正是TLS紧跟当代密码学的步伐，尽全力的保障用户的安全。老规矩，我们用wireshark看看长什么样子。</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/c437bf1a-a346-43a8-8195-c2381e0e64ec.png" alt="TLS" title="TLS"><figcaption>TLS</figcaption></figure>
+<p>可以看出在交互的过程中多了不少新东西，了解TLS,TLS由SSL握手协议，SSL修改密码规范协议，SSL警报协议，SSL记录协议组成。</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/76f6a1c9-0a74-4362-8332-d6d26694225d.png" alt="TLS组成" title="TLS组成"><figcaption>TLS组成</figcaption></figure>
+<p>SSL握手协议：</p>
+<blockquote>
+  <p>相对于三次握手</p>
+</blockquote>
+<p>记录协议</p>
+<blockquote>
+  <p>记录为TLS发送接收数据的基本单位。它的自协议需要通过记录协议发出。如果多个纪录数据则可以一个TCP包一次性发出。</p>
+</blockquote>
+<p>警报协议</p>
+<blockquote>
+  <p>类似HTTP状态码，通过反馈不同的消息进行不同的策略。</p>
+</blockquote>
+<p>变更密码规范协议</p>
+<blockquote>
+  <p>告诉对方，从此刻开始，后续的数据将使用加密算法进行加密再传输。</p>
+</blockquote>
+<p>对称加密与非对称加密</p>
+<p>对称加密</p>
+<blockquote>
+  <p>对称加密，顾名思义，加密方与解密方使用同一钥匙(秘钥)。具体一些就是，发送方通过使用相应的加密算法和秘钥，对将要发送的信息进行加密；对于接收方而言，使用解密算法和相同的秘钥解锁信息，从而有能力阅读信息。</p>
+</blockquote>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/704de42c-525f-477a-82ed-14ef8d742846.png" alt="对称加密" title="对称加密"><figcaption>对称加密</figcaption></figure>
+<p>非对称加密</p>
+<blockquote>
+  <p>在对称加密中，发送方与接收方使用相同的秘钥。那么在非对称加密中则是发送方与接收方使用的不同的秘钥。其主要解决的问题是防止在秘钥协商的过程中发生泄漏。比如在对称加密中，小蓝将需要发送的消息加密，然后告诉你密码是123balala,ok,对于其他人而言，很容易就能劫持到密码是123balala。那么在非对称的情况下，小蓝告诉所有人密码是123balala,对于中间人而言，拿到也没用，因为没有私钥。所以，非对称密钥其实主要解决了密钥分发的难题。如下图</p>
+</blockquote>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/f0c31708-2dd4-406e-b2c6-03f28eb6fcfc.png" alt="非对称加密" title="非对称加密"><figcaption>非对称加密</figcaption></figure>
+<blockquote>
+  <p>其实我们经常都在使用非对称加密，比如使用多台服务器搭建大数据平台hadoop，为了方便多台机器设置免密登录，是不是就会涉及到秘钥分发。再比如搭建docker集群也会使用相关非对称加密算法。</p>
+</blockquote>
+<p>混合加密</p>
+<blockquote>
+  <p>非对称加密算法，大多数是从数学问题演变而来，运算速度较慢。混合加密所谓取长补短。通信过程中使用RSA等解决密钥交换问题，然后使用随机数产生的在对称算法中的会话密钥，最后使用加密。对方使用私钥解密得到的秘闻取出会话秘钥，这样就实现了密钥交换。</p>
+</blockquote>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/f31c7738-0343-43a8-958c-38c7728d7762.png" alt="混合加密" title="混合加密"><figcaption>混合加密</figcaption></figure>
+<p>通过混淆加密等方式完成了机密性任务，作为Hack只需要伪造发布公钥或者作为之间人窃听密文。但是我们知道安全是四要素，还需要保证数据的完整性，身份认证等。</p>
+<p>摘要</p>
+<blockquote>
+  <p>摘要算法可以理解为一种特殊的"单向"加密算法，无密钥，不可逆。在平时项目中，应该大家都是用过MD5，SHA-1。但是在TLS中使用SHA-2。</p>
+</blockquote>
+<p>假设小A转账5000给小C，小A加上SHA-2摘要。网站计算摘要并对比，如果一致则完整可信。</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/2e528ad1-5816-4590-abc1-c57975244732.png" alt="摘要可信" title="摘要可信"><figcaption>摘要可信</figcaption></figure>
+<p>此时小B想修改小A给的money，这个时候网站计算摘要就会发现不一样，不可信</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/c9879fed-3e65-40be-a95d-7ee8f592b8fc.png" alt="摘要不可信" title="摘要不可信"><figcaption>摘要不可信</figcaption></figure>
+<p>HTTPS请求建立连接过程</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/65abb4c5-afa3-497a-aeb1-3b5db1f1eb90.png" alt="HTTP握手过程" title="HTTP握手过程"><figcaption>HTTP握手过程</figcaption></figure>
+<p>注意：</p>
+<ol>
+<li><span>首先通过非对称加密建立通信过程</span></li>
+<li><span>在握手阶段，为什么使用3个随机数，一方面防止「随机数 C」被猜出，另一方增加Session key随机性</span></li>
+<li><span>Client发出支持的「对称/非对称加密」算法</span></li>
+<li><span>server返回选用的「对称/非对称加密」算法</span></li>
+<li><span>Client对算法进行确认</span></li>
+<li><span>Server对算法进行确认</span></li>
+</ol>
+<p>根据wireshak结果，对TLS进一步剖析。TCP三次握手建立连接，作为礼貌，Client先打招呼"Client Hello"。里面包含了Client的版本号、所支持的密码套件和随机数，如下图所示</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/012f5f5e-63fc-47d7-9cde-6508335e0120.png" alt="Client Hello" title="Client Hello"><figcaption>Client Hello</figcaption></figure>
+<p>Server端表示尊重，回复"Server Hello",同时进行版本校对，给出随机数(Server Random)，从Client算法列表中选择一个密码套件，在这里选择的"TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"。</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/a0a4fe79-6ddf-4861-8253-76c1d23d3622.png" alt="cipher Suite" title="cipher Suite"><figcaption>cipher Suite</figcaption></figure>
+<p>这里的"TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"什么意思呢</p>
+<blockquote>
+  <p>密码套件选择椭圆曲线加RSA、AES、SHA256</p>
+</blockquote>
+<p>双方通过证书验证身份。因为本机服务器选用了ECDHE算法，为了实现密钥交换算法，它会发送证书后把椭圆曲线的公钥（Server Params）连带"Server Key Exchange"消息发送出去。</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/fc06adc7-c07b-43a9-87d8-1dafb0cb5334.png" alt="Server Key Exchange" title="Server Key Exchange"><figcaption>Server Key Exchange</figcaption></figure>
+<p>意思是，刚才混合加密套件比较复杂，给你个算法参数，好好记住，别弄丢了。</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/9f10aa89-e080-4f16-9256-fe4075872dce.png" alt="ServerHelloDone" title="ServerHelloDone"><figcaption>ServerHelloDone</figcaption></figure>
+<p>随后服务端回复"hello done"告知打招呼完毕</p>
+<p>打完招呼完毕后，客户端对证书进行核实。然后根据密码套件也生成椭圆曲线的公钥，用"Client Key Exchange"消息发给服务器</p>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/bd54473a-891d-49a1-8977-d9aeebc39962.png" alt="Client Key Exchange" title="Client Key Exchange"><figcaption>Client Key Exchange</figcaption></figure>
+<p>此时客户端和服务端都有了密钥交换的两个参数(Client Params、ServerParams），然后通过 ECDHE 算法算出了一个新的值，叫“Pre-Master”</p>
+<p>有了主密钥和会话密钥，客户端发送“Change Cipher Spec”和“Finished”消息，最后将所有消息加上摘要发送给服务器验证。</p>
+<p>服务器同样发送“Change Cipher Spec”和“Finished”消息，握手结束，开始进行HTTP请求与响应</p>
+<p>4 初探域名</p>
+<blockquote>
+  <p>我们知道域名的出现让我们更容易记忆，按照"."分割，越靠近右边级别越高。域名本质是一个名字空间系统，采用多级域名的方式区分不同的国家，公司等，作为一种身份的标识。</p>
+</blockquote>
+<p>根域名服务器（Root DNS Server）：管理顶级域名服务器，返回“com”“net”“cn”等顶级域名服务器的 IP 地址；</p>
+<p>顶级域名服务器（Top-level DNS Server）：管理各自域名下的权威域名服务器，比如<br>com 顶级域名服务器可以返回 apple.com 域名服务器的 IP 地址；</p>
+<p>权威域名服务器（Authoritative DNS Server）：管理自己域名下主机的 IP 地址，比如apple.com 权威域名服务器可以返回 www.apple.com 的 IP 地址**</p>
+<h2 id="h6http"><span>6 HTTP特点小结</span></h2>
+<blockquote>
+  <p>写到这里，说它简单是假的，简单的东西通常更具有扩展的可能性。根据需求的变更，越来越复杂。</p>
+</blockquote>
+<p>1：灵活且易扩展，他的头部字段很多都是可定制且可扩展</p>
+<p>2：应用广泛。各个领域都有涉及。"跨平台，跨语言"</p>
+<p>3：无状态。没有记忆功能，少功能即少占用资源。另外无状态更容易搭建集群，通过负载均衡将请求转发到任意一台服务器。缺点是无法支持需要连续步骤的"事务"操作。我们知道TCP协议有11种状态，不同状态代表通信过程中不同的含义。同样操作系统中的进程也有执行，就绪，活动阻塞等多种状态。但是HTTP全程都是"懵逼"无状态。比如小华请求服务器获取视频X，服务器觉得可行就发给小华。小华还想获取视频Y，这时服务器不会记录之前的状态，也就不知道这两个请求是否是同一个，所以小华还得告诉服务器自己的身份。</p>
+<p>4：明文。优点是能让开发人员通过wireshark工具更直观的调试。缺点即裸奔互联网，没隐私可言。</p>
+<p>5:可靠传输。HTTP为应用层协议，基于TCP/IP，而TCP为“可靠”传输协议，因此HTTP能在请求应答中"可靠"传输数据。</p>
+<p>6：应用层协议。应用层协议很多，其中常用的邮件协议SMTP，上传下载文件ftp，默认端口22/23，SSH远程登录(XSHELL)。这些应用层协议都太专一，而HTTP通过各种头部字段，实体数据的组合，并综合缓存代理等功能，不得不说是网络中的冠希哥。</p>
+<h2 id="h7http"><span>7 HTTP识别(还原)</span></h2>
+<blockquote>
+  <p>这里说的识别，通过代码层面(libpcap封装)实现HTTP的识别，也能进一步体现TCP/IP协议栈的分层特性。先看回忆一下IP头部格式。</p>
+</blockquote>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/314d5162-f328-49f0-b919-174eeb00a254.png" alt="IP头部" title="IP头部"><figcaption>IP头部</figcaption></figure>
+<p>注意头部中的协议字段，如果此字段值为0x0600则为TCP分组。当知道了是TCP分组后，是不是可以通过TCP头部中端口(80)就可以判断为HTTP呢，不能的，很多情况都会使用动态端口的方式进行部署。此时可以通过HTTP中的关键字进行判断。如果为HTTP，再通过头部字段中的"Content-type"，charset等确认文本信息，编码方式，最后采用解码算法进行还原。</p>
+<h2 id="h8https"><span>8 HTTPS(密文)识别</span></h2>
+<blockquote>
+  <p>方法一也是比较直接的方法是直接通过抓包工具，插件配置即可。这里想给大家分享另一种思路和在Linux持续捕包的方法。</p>
+</blockquote>
+<ul>
+<li><span>数据集采集</span></li>
+</ul>
+<blockquote>
+  <p>使用python的dpkt库(pip install dpkt即可)，dpkt库方便对每一层协议进行拆解，同时也能进行流的拆分以及特征的提取。下面举一个通过无头浏览的方式自动化采集流量(ps如果需要较大规模的流量采集则可以考虑使用docker集群的方式)</p>
+</blockquote>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/c07d399f-cbd3-4200-88c9-655fcf92b618.png" alt="Read_pcap" title="Read_pcap"><figcaption>Read_pcap</figcaption></figure>
+<ul>
+<li><span>根据所提特征生成npz(实际上是numpy提供的数组存储方式)</span></li>
+<li><span>使用开源skearn库进行模型训练并识别预测，此处假设使用SVM(仅使用默认参数)</span></li>
+</ul>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/a5e41ba0-2152-470c-8241-9f9bd6fb61d0.png" alt="SVM" title="SVM"><figcaption>SVM</figcaption></figure>
+<ul>
+<li><span>识别结果(参数进行适度调整定会更好的效果)</span></li>
+</ul>
+<figure><img src="https://imgkr.cn-bj.ufileos.com/893e3435-8696-4a51-ba19-d25300a52a74.png" alt="识别结果" title="识别结果"><figcaption>识别结果</figcaption></figure>
+<h2 id="h9http"><span>9 HTTP面试题测试</span></h2>
+<blockquote>
+  <p>希望大家看完本文，下面的这些面试是不是可以秒杀了</p>
+</blockquote>
+<ul>
+<li><p>Get和Post区别</p></li>
+<li><p>HTTP与HTTPS区别</p></li>
+<li><p>HTTP通信过程</p></li>
+<li><p>游览器输入一个地址。到页面展示中间经历了哪些步骤？</p></li>
+<li><p>cookies机制和session机制的区别：</p></li>
+<li><p>HTTP请求报文与响应报文格式</p></li>
+<li><p>一次完整的HTTP请求所经历的7个步骤</p></li>
+<li><p>HTTP优化方案</p></li>
+<li><p>不同版本的HTTP区别</p></li>
+<li><p>HTTP优点缺点</p></li>
+<li><p>URI和URL的区别</p></li>
+<li><p>如何判断是否为http</p></li>
+<li><p>HTTP 1.1引入分块传输编码提供了以下几点好处</p></li>
+<li><p>长连接与短连接的区别，以及应用场景</p></li>
+<li><p>常见web攻击</p></li>
+<li><p>站内跳转和外部重定向有何区别</p></li>
+<li><p>HTTP的keep-alive是干什么的？</p></li>
+<li><p>关于Http 2.0 你知道多少？</p></li>
+<li><p>讲讲304缓存的原理</p></li>
+<li><p>HTTP与RPC异同</p></li>
+<li><p>从传输协议来说</p></li>
+</ul>
+<blockquote>
+  <p>RPC既可以基于TCP也可以基于HTTP协议，但是HTTP通常都是基于HTTP</p>
+</blockquote>
+<ul>
+<li><span>从性能消耗来说</span></li>
+</ul>
+<blockquote>
+  <p>RPC可以基于thrift实现高效二进制传输。HTTP大部分通过json实现，无论从字节大小还是序列化耗时都比t'hrift耗时</p>
+</blockquote>
+<ul>
+<li><span>从负载均衡来说</span></li>
+</ul>
+<blockquote>
+  <p>RPC基本上自带负载均衡策略，而HTTP需要配置Nginx实现。</p>
+</blockquote>
+<h2 id="h"><span>唠嗑</span></h2>
+<p>第一篇文章能肝到这么长，也终于体会到各位大佬写文的不容易，不想被「 白嫖」，文末点个「 在看」吧，让我们一起「 看世界」。</p>
+<p>巨人的肩膀</p>
+<p>https://www.chainnews.com/articles/401950499827.htm<br>https://developer.mozilla.org/zhCN/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP<br>https://blog.csdn.net/liaynling/article/details/86743432<br>http://www.webkaka.com/tutorial/server/2015/021013/<br>http://ningg.top/introduction-of-https/<br>https://www.jianshu.com/p/b61695e6b473<br>《图解HTTP》<br>《透视HTTP》</p>
+<p>Persist</p></div></div></body>
+</html>
