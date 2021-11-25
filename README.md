@@ -4,6 +4,10 @@
 
 从 2021年6月 开始写关于国企/银行相关的面试，差不多半年了，期间和部分同学走完了完整的面试。
 
+在这半年里，写了 20w 字，整理一小本银行突击 PDF，大家可以自行去下载。
+
+[蓝蓝银行PDF下载](https://mp.weixin.qq.com/s?__biz=MzAxMDMzOTEwMA==&mid=2453508200&idx=1&sn=06155454cdc6add70282511714b773e8&chksm=8c98e61bbbef6f0df7a8efec157f19961caa380af11e1f296a4c09c69ce12ac77e78038623f8&token=334441818&lang=zh_CN#rd)
+
 希望这些内容能够让更多的小伙伴受益，不过，记得给我去 **Star** [我的Github](https://github.com/MikeCreken/lanlanInterview)一下下哟，听说 **Star** 的小伙伴就很容易上岸呢。
 
 当然也建立了自己群，如果大家想进群，最好加我的时候自我介绍一下哈，我晚上会统一同意哦。
